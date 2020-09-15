@@ -15,6 +15,13 @@ export default function Routes() {
             <Route exact path="/dashboard/admins">
                 <Admins />
             </Route>
+            <Route exact path="/dashboard/admins/create">
+                <CreateAdmin />
+            </Route>
+            {/* <Route exact path="/dashboard/admins/edit/:id">
+                <EditAdmin />
+            </Route> */}
+
         </Switch>
     );
 }

@@ -74,8 +74,8 @@ export default function Admin() {
                         <Grid>
                             <Typography className={classes.tablehead} variant="h4">List Admin</Typography>
                         </Grid>
-                        {/* <Grid>
-                            {loggedAdmin.role==='superadmin' && 
+                        <Grid>
+                            
                             <Link
                                 to="/dashboard/admins/create"
                                 className={classes.link}
@@ -88,8 +88,8 @@ export default function Admin() {
                                 >
                                     Add
                                 </Button>
-                            </Link>}
-                        </Grid> */}
+                            </Link>
+                        </Grid>
                     </Grid>
                 </Container>
 

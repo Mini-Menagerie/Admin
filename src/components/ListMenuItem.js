@@ -67,12 +67,12 @@ export default function ListMenuItem() {
     return (
         <Box className={classes.text} >
             <ListItem className={classes.profile}>
-            {/* { loggedAdmin.role==='superadmin' && 
+          
                 <Avatar className={classes.avatar} >
                     <img src={Superadmin} alt="" />
                 </Avatar>
-            }
-            { loggedAdmin.role==='admin' && 
+            
+            {/* { loggedAdmin.role==='admin' && 
                 <Avatar className={classes.avatar} >
                     <img src={Admin} alt="" />
                 </Avatar>
