@@ -6,10 +6,10 @@ import TextField from "@material-ui/core/TextField";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import PetsRounded from "@material-ui/icons/PetsRounded";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import Kucing from "../../assets/kucing.jpeg";
-import Logo1 from "../../assets/new_logo.png";
+import Kucing from "../assets/kucing.jpeg"
 import CardMedia from "@material-ui/core/CardMedia";
 import { useDispatch } from "react-redux";
 // import { login } from "../../redux/actions";
@@ -20,12 +20,13 @@ import { Box } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   root: {
     margin: "5% auto",
-    width: "50%",
+    width: "60%",
     display: "flex",
     backgroundColor: "#3a6986",
     MozBorderRadius: "10px",
     WebkitBorderRadius: "10px",
     borderRadius: "10px",
+    padding: "50px"
   },
   head: {
     width: "40%",
@@ -36,10 +37,12 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     backgroundRepeat: "no-repeat",
-    backgroundColor: "lightblue",
+    backgroundSize:"cover",
+    backgroundColor: "whitesmoke",
     backgroundPosition: "center",
     paddingLeft: theme.spacing(5),
     paddingRight: theme.spacing(5),
+    paddingTop: theme.spacing(5),
   },
 
   media: {
@@ -101,16 +104,16 @@ export default function Login() {
       <Grid item sm={12} md={5} lg={5} component={Paper} >
         <Box className={classes.paper}>
           <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
+            <PetsRounded />
           </Avatar>
           <Typography component="h1" variant="h5">
             Login
           </Typography>
           <Formik
-            initialValues={{ username: "", password: "" }}
+            initialValues={{ email: "", password: "" }}
             validate={(values) => {
               const errors = {};
-              if (!values.username) {
+              if (!values.email) {
                 errors.username = "Required";
               }
               if (!values.password) {
@@ -125,14 +128,14 @@ export default function Login() {
             {() => (
               <Form className={classes.form}>
                 <Field
-                  type="username"
+                  type="email"
                   as={CustomField}
-                  name="username"
-                  label="Username"
+                  name="email"
+                  label="Email"
                   autoFocus
                 />
                 <ErrorMessage
-                  name="username"
+                  name="Email"
                   component="div"
                   className={classes.error}
                 />
