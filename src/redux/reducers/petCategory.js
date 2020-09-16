@@ -1,9 +1,8 @@
+const petCategory = [];
 
-const initialState = [];
-
-export default (state = initialState, actions) => {
+export default (state = petCategory, actions) => {
     switch (actions.type) {
-        case "GET_ALL_ADMIN":
+        case "GET_ALL_PET_CATEGORY":
             return actions.payload;
         default:
             return state;

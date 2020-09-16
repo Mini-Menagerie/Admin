@@ -12,7 +12,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Kucing from "../assets/kucing.jpeg"
 import CardMedia from "@material-ui/core/CardMedia";
 import { useDispatch } from "react-redux";
-// import { login } from "../../redux/actions";
+import { login } from "../../redux/actions";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useHistory } from "react-router-dom";
 import { Box } from '@material-ui/core';
@@ -82,8 +82,8 @@ const CustomField = (props) => {
 
 export default function Login() {
   const classes = useStyles();
-//   const dispatch = useDispatch();
-//   const history = useHistory();
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -122,7 +122,7 @@ export default function Login() {
               return errors;
             }}
             onSubmit={(values) => {
-            //   dispatch(login(values, history));
+              dispatch(login(values, history));
             }}
           >
             {() => (
