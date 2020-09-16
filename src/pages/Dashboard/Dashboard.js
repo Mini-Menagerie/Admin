@@ -2,10 +2,11 @@ import React, { Fragment, useEffect} from "react";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from "@material-ui/core";
-import {getAllEvents } from "../../redux/actions";
+import {getAllAdmin, getAllCategoryPet } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import CountUp from 'react-countup';
 import { Box } from "@material-ui/core";
+import petCategory from "../../redux/reducers/petCategory";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -68,12 +69,14 @@ const useStyles = makeStyles((theme) => ({
 export default function Dashboard() {
     const classes = useStyles();
     const dispatch = useDispatch();
-    // const allEvents = useSelector((state) => state.events.allEvents);
-    
+    const allAdmin = useSelector((state) => state.admin);
+    const petCategory = useSelector((state) => state.petCategory);
+    console.log(petCategory);
 
-    // useEffect(() => {
-    //     dispatch(getAllEvents());
-    // }, [dispatch]);
+    useEffect(() => {
+        dispatch(getAllAdmin());
+        dispatch(getAllCategoryPet());
+    }, [dispatch]);
 
     return (
         <Fragment>
@@ -93,7 +96,24 @@ export default function Dashboard() {
                                 <Typography variant="h4">
                                     <CountUp
                                         start={0}
-                                        end={1}
+                                        end={allAdmin.length}
+                                        duration={4}
+                                        useEasing={true}
+                                        useGrouping={true}
+                                        separator=" "
+                                    />
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                        <Grid elevation={3} className={classes.paper} item xs={false} sm={12} md={5} lg={3}  >
+                            <Typography variant="h5">
+                                Pet Category
+                            </Typography>
+                            <Grid className={classes.actspeaker} >
+                                <Typography variant="h4">
+                                    <CountUp
+                                        start={0}
+                                        end={petCategory.length}
                                         duration={4}
                                         useEasing={true}
                                         useGrouping={true}
