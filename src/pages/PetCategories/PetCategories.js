@@ -16,7 +16,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import AddIcon from "@material-ui/icons/Add";
 import { Link } from "react-router-dom";
-import { getAllAdmin, getAllCategoryPet } from "../../redux/actions";
+import { getAllAdmin, getAllCategoryPet, deletePetCategory } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import jwtDecode from "jwt-decode";
 
@@ -54,10 +54,10 @@ export default function Admin() {
     const dispatch = useDispatch();
     const admins = useSelector((state) => state.admin);
     const petCategory = useSelector((state) => state.petCategory);
-    console.log(admins)
+    // console.log(admins)
 
     const loggedAdmin = jwtDecode(localStorage.getItem('token'))
-    console.log(loggedAdmin, "logged")
+    // console.log(loggedAdmin, "logged")
 
     useEffect(() => {
         dispatch(getAllAdmin());
@@ -80,7 +80,7 @@ export default function Admin() {
                         <Grid>
                             
                             <Link
-                                to="/dashboard/petcategory/create"
+                                to="/dashboard/petCategory/create"
                                 className={classes.link}
                             >
                                 <Button
@@ -125,7 +125,7 @@ export default function Admin() {
                                     {index >= 0 &&
                                     <TableCell align="right">
                                         <Link
-                                            to={`/dashboard/petcategory/edit/${row._id}`}
+                                            to={`/dashboard/petCategory/edit/${row._id}`}
                                             className={classes.link}
                                         >
                                             <Button
@@ -144,8 +144,8 @@ export default function Admin() {
                                             className={classes.button}
                                             startIcon={<DeleteIcon />}
                                             onClick={() =>
-                                                null
-                                                // dispatch(deleteAdmin(row._id))
+                                                
+                                                dispatch(deletePetCategory(row._id))
                                             }
                                         >
                                             Delete

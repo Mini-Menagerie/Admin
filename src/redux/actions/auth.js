@@ -21,5 +21,6 @@ export const login = (formData, history) => async () => {
 
 export const logout = (history) => async () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("admin");
     history.push("/");
 };
