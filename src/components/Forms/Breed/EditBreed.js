@@ -6,7 +6,7 @@ import { Container, Grid, Button } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useHistory } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage} from "formik";
-import { updatePetCategory } from "../../../redux/actions";
+import { updateBreed } from "../../../redux/actions";
 
 const useStyles = makeStyles((theme) => ({
     field: {
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function EditPetCategory() {
+export default function EditBreed() {
     const classes = useStyles();
 
     const CustomField = (props) => {
@@ -35,7 +35,7 @@ export default function EditPetCategory() {
 
     const dispatch = useDispatch();
     const { pathname } = useLocation();
-    const petCategory = useSelector((state) => state.petCategory);
+    const breeds = useSelector((state) => state.breed);
     const history = useHistory();
 
     // console.log(admins, 'ssss')
@@ -50,12 +50,12 @@ export default function EditPetCategory() {
         <Container>
             <Formik
                 initialValues={{
-                    categoryName: "",
+                    breedName: "",
                 }}
                 enableReinitialize={true}
                
                 onSubmit={(values) => {
-                    dispatch(updatePetCategory(values, id, history));
+                    dispatch(updateBreed(values, id, history));
                 }}
             >
                 {() => (
@@ -71,8 +71,8 @@ export default function EditPetCategory() {
                                 <Field
                                     type="text"
                                     as={CustomField}
-                                    name="categoryName"
-                                    label="Category Name"
+                                    name="breedName"
+                                    label="Breed Name"
                                     required
                                     autoFocus
                                 />
