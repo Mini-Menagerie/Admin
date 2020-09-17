@@ -11,6 +11,7 @@ import DesktopMacRoundedIcon from '@material-ui/icons/DesktopMacRounded';
 import RecordVoiceOverRoundedIcon from '@material-ui/icons/RecordVoiceOverRounded';
 import PeopleAltRoundedIcon from '@material-ui/icons/PeopleAltRounded';
 import TimelineRoundedIcon from '@material-ui/icons/TimelineRounded';
+import PetsRounded from "@material-ui/icons/PetsRounded";
 import { Link } from "react-router-dom";
 import { Grid, Box } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
@@ -105,6 +106,14 @@ export default function ListMenuItem() {
                         <DesktopMacRoundedIcon color="primary" />
                     </ListItemIcon>
                         <ListItemText primary="Products" />
+                 </ListItem>
+            </Link>
+            <Link to="/dashboard/petCategory" className={classes.link}>
+                <ListItem button>
+                    <ListItemIcon>
+                        <PetsRounded color="primary" />
+                    </ListItemIcon>
+                        <ListItemText primary="Pet Category" />
                 </ListItem>
             </Link>
          

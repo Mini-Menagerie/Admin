@@ -16,7 +16,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import AddIcon from "@material-ui/icons/Add";
 import { Link } from "react-router-dom";
-import { getAllAdmin, deleteAdmin } from "../../redux/actions";
+import { getAllAdmin, getAllCategoryPet, deletePetCategory } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import jwtDecode from "jwt-decode";
 
@@ -53,12 +53,15 @@ export default function Admin() {
     const classes = useStyles();
     const dispatch = useDispatch();
     const admins = useSelector((state) => state.admin);
-    console.log(admins)
+    const petCategory = useSelector((state) => state.petCategory);
+    // console.log(admins)
+
     const loggedAdmin = jwtDecode(localStorage.getItem('token'))
-    console.log(loggedAdmin, "logged")
+    // console.log(loggedAdmin, "logged")
 
     useEffect(() => {
         dispatch(getAllAdmin());
+        dispatch(getAllCategoryPet());
     }, [dispatch]);
 
     return (
@@ -72,12 +75,12 @@ export default function Admin() {
                         alignItems="center"
                     >
                         <Grid>
-                            <Typography className={classes.tablehead} variant="h4">List Admin</Typography>
+                            <Typography className={classes.tablehead} variant="h4">List Pet Category</Typography>
                         </Grid>
                         <Grid>
                             
                             <Link
-                                to="/dashboard/admins/create"
+                                to="/dashboard/petCategory/create"
                                 className={classes.link}
                             >
                                 <Button
@@ -101,10 +104,7 @@ export default function Admin() {
                                     <Typography className={classes.text} variant="h6">No</Typography>
                                 </TableCell>
                                 <TableCell align="left">
-                                    <Typography className={classes.text} variant="h6">email</Typography>
-                                </TableCell>
-                                <TableCell align="left">
-                                    <Typography className={classes.text} variant="h6">Role</Typography>
+                                    <Typography className={classes.text} variant="h6">Category Name</Typography>
                                 </TableCell>
                                 <TableCell align="right" >
                                     <Typography className={classes.tablehead} variant="h6">Action</Typography>
@@ -112,28 +112,20 @@ export default function Admin() {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {Array.isArray(admins) &&
-                            admins.map((row, index) => (
+                            {Array.isArray(petCategory) &&
+                            petCategory.map((row, index) => (
+                                
                                 <TableRow key={row._id}>
                                     <TableCell component="th" scope="row">
                                         <Typography variant="h6">{index+1}</Typography>
                                     </TableCell>
                                     <TableCell align="left">
-                                        <Typography variant="h6">{row.email}</Typography>
+                                        <Typography variant="h6">{row.categoryName}</Typography>
                                     </TableCell>
-                                    <TableCell align="left">
-                                        <Typography variant="h6">Admin</Typography>
-                                    </TableCell>
-                                    {index===0 &&
-                                    <TableCell align="Right">
-                                        <Typography variant="h6"></Typography>
-                                    </TableCell>
-                                    }
-                                    {index > 0 &&
+                                    {index >= 0 &&
                                     <TableCell align="right">
-                                        {loggedAdmin.id===row._id &&
                                         <Link
-                                            to={`/dashboard/admins/edit/${row._id}`}
+                                            to={`/dashboard/petCategory/edit/${row._id}`}
                                             className={classes.link}
                                         >
                                             <Button
@@ -146,15 +138,14 @@ export default function Admin() {
                                             </Button>
                                     </Link>
                                         
-                                        }
                                         <Button
                                             variant="contained"
                                             color="secondary"
                                             className={classes.button}
                                             startIcon={<DeleteIcon />}
                                             onClick={() =>
-                                                null
-                                                // dispatch(deleteAdmin(row._id))
+                                                
+                                                dispatch(deletePetCategory(row._id))
                                             }
                                         >
                                             Delete

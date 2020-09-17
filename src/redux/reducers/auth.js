@@ -1,9 +1,8 @@
+const auth = []
 
-const initialState = [];
-
-export default (state = initialState, actions) => {
+export default (state = auth, actions) => {
     switch (actions.type) {
-        case "GET_ALL_ADMIN":
+        case "GET_AUTH":
             return actions.payload;
         default:
             return state;
