@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function AddAdmin() {
+export default function AddPetCategory() {
     const classes = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
@@ -61,9 +61,8 @@ export default function AddAdmin() {
                 initialValues={{
                     categoryName: "",
                 }}
-                onSubmit={(values) => {
-                    console.log(values)
-                    dispatch(addPetCategory(values));
+                onSubmit={(values, history) => {
+                    dispatch(addPetCategory(values, history));
                 }}
             >
                 {() => (

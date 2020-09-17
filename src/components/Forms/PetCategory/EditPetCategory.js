@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function EditAdmin() {
+export default function EditPetCategory() {
     const classes = useStyles();
 
     const CustomField = (props) => {

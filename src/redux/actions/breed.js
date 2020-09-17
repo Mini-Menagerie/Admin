@@ -10,14 +10,15 @@ export const getAllBreed = () => async (dispatch) => {
     })
 }
 
-export const addBreed = (values) => async (dispatch) => {
+export const addBreed = (values, history) => async (dispatch) => {
     let result = await axios.post('/breed/register', values)
     console.log(result);
 
     await dispatch({
-        type: "ADD_ONE_PET_CATEGORY",
+        type: "ADD_ONE_BREED",
         payload: result.data.message
     })
+    history.goBack()
 
 }
 
@@ -26,7 +27,7 @@ export const updateBreed = (values, id, history) => async (dispatch) => {
     console.log(result);
     if(result.status === 200){
         await dispatch({
-            type: "UPDATE_ONE_PET_CATEGORY",
+            type: "UPDATE_ONE_BREED",
             payload: result.data.message
         })
         history.goBack();

@@ -70,7 +70,6 @@ export default function Dashboard() {
     const dispatch = useDispatch();
     const allAdmin = useSelector((state) => state.admin);
     const petCategory = useSelector((state) => state.petCategory);
-    console.log(petCategory);
 
     useEffect(() => {
         dispatch(getAllAdmin());

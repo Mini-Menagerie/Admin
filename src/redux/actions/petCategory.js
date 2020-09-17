@@ -10,7 +10,7 @@ export const getAllCategoryPet = () => async (dispatch) => {
     })
 }
 
-export const addPetCategory = (values) => async (dispatch) => {
+export const addPetCategory = (values, history) => async (dispatch) => {
     let result = await axios.post('/categoryPet/register', values)
     console.log(result);
 
@@ -18,6 +18,7 @@ export const addPetCategory = (values) => async (dispatch) => {
         type: "ADD_ONE_PET_CATEGORY",
         payload: result.data.message
     })
+    history.goBack()
 
 }
 
