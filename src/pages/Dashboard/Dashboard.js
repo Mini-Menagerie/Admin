@@ -6,7 +6,6 @@ import {getAllAdmin, getAllCategoryPet } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import CountUp from 'react-countup';
 import { Box } from "@material-ui/core";
-import petCategory from "../../redux/reducers/petCategory";
 
 
 const useStyles = makeStyles((theme) => ({
