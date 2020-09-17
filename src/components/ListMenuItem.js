@@ -99,6 +99,14 @@ export default function ListMenuItem() {
                         <ListItemText primary="Admin" />
                 </ListItem>
             </Link>
+            <Link to="/dashboard/products" className={classes.link}>
+                <ListItem button>
+                    <ListItemIcon>
+                        <DesktopMacRoundedIcon color="primary" />
+                    </ListItemIcon>
+                        <ListItemText primary="Products" />
+                </ListItem>
+            </Link>
          
             {/* <Link to="/dashboard/events" className={classes.link}>
                 <ListItem button>
