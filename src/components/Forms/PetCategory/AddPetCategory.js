@@ -61,7 +61,7 @@ export default function AddPetCategory() {
                 initialValues={{
                     categoryName: "",
                 }}
-                onSubmit={(values, history) => {
+                onSubmit={(values) => {
                     dispatch(addPetCategory(values, history));
                 }}
             >

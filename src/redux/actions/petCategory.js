@@ -11,7 +11,7 @@ export const getAllCategoryPet = () => async (dispatch) => {
 }
 
 export const addPetCategory = (values, history) => async (dispatch) => {
-    let result = await axios.post('/categoryPet/register', values)
+    let result = await axios.post('/categoryPet/create', values)
     console.log(result);
 
     await dispatch({
