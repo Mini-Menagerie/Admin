@@ -15,7 +15,7 @@ import { useDispatch} from "react-redux";
 const useStyles = makeStyles((theme) => ({
     appBar: {
         zIndex: theme.zIndex.drawer - 1,
-        backgroundColor: '#66de64',
+        backgroundColor: "whitesmoke",
         paddingRight: theme.spacing(5),
     },
    

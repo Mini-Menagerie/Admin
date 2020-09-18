@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     drawerPaper: {
         position: "relative",
         whiteSpace: "nowrap",
-        backgroundColor: '#66de64',
+        backgroundImage: `url(${SideImage})`,
         backgroundSize: 'cover',
         objectFit: '',
         width: '100%',
