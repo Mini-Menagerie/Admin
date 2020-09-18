@@ -54,8 +54,6 @@ export default function Admin() {
     const dispatch = useDispatch();
     const admins = useSelector((state) => state.admin);
     console.log(admins)
-    const loggedAdmin = jwtDecode(localStorage.getItem('token'))
-    console.log(loggedAdmin, "logged")
 
     useEffect(() => {
         dispatch(getAllAdmin());
@@ -131,7 +129,7 @@ export default function Admin() {
                                     }
                                     {index > 0 &&
                                     <TableCell align="right">
-                                        {loggedAdmin.id===row._id &&
+                                        
                                         <Link
                                             to={`/dashboard/admins/edit/${row._id}`}
                                             className={classes.link}
@@ -146,7 +144,7 @@ export default function Admin() {
                                             </Button>
                                     </Link>
                                         
-                                        }
+                                        
                                         <Button
                                             variant="contained"
                                             color="secondary"
