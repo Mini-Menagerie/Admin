@@ -10,14 +10,15 @@ export const getAllProducts = () => async (dispatch) => {
     })
 }
 
-export const addProduct = (values) => async (dispatch) => {
-    let result = await axios.post('/product/register', values)
+export const addProduct = (values, history) => async (dispatch) => {
+    let result = await axios.post('/product/create', values)
     console.log(result);
 
     await dispatch({
         type: "ADD_ONE_PRODUCT",
-        payload: result.data.message
+        payload: result.data.result
     })
+    history.goBack()
 
 }
 

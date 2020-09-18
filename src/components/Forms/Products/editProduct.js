@@ -6,7 +6,7 @@ import { Container, Grid, Button } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useHistory } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage} from "formik";
-import { updateProduct } from "../../../redux/actions";
+import { updateProduct, addImage } from "../../../redux/actions";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -51,12 +51,13 @@ export default function EditProduct() {
         <Container>
             <Formik
                 initialValues={{
-                    categoryName: "",
+                    idProduct: id,
+                    urlImage: ''
                 }}
                 enableReinitialize={true}
                
                 onSubmit={(values) => {
-                    dispatch(updateProduct(values, id, history));
+                    dispatch(addImage(values, history));
                 }}
             >
                 {() => (
@@ -70,56 +71,13 @@ export default function EditProduct() {
                         >
                             <Grid container item xs={12} md={6} lg={6}>
                         <Field
-                            type="productName"
-                            as={CustomField}
-                            name="productName"
-                            label="Product Name"
-                            autoFocus
-                        />
-                    </Grid>
-                    <Grid container item xs={12} md={6} lg={6}>
-                        <Field
-                            type="text"
-                            as={CustomField}
-                            name="price"
-                            label="Price"
-                        />
-                   </Grid>
-                   <Grid container item xs={12} md={6} lg={6}>
-                        <Field
-                            type="text"
-                            as={CustomField}
-                            name="stock"
-                            label="Stock"
-                        />
-                   </Grid> 
-                   <Grid container item xs={12} md={6} lg={6}>
-                        <Field
-                            type="text"
+                            type="urlImage"
                             as={CustomField}
                             name="urlImage"
-                            label="Image 1"
+                            label="URL Image"
                             autoFocus
-                        />                              
-                       </Grid> 
-                       <Grid container item xs={12} md={6} lg={6}>
-                        <Field
-                            type="text"
-                            as={CustomField}
-                            name="urlImage"
-                            label="Image 2"
-                            autoFocus
-                        />                              
-                       </Grid> 
-                       <Grid container item xs={12} md={6} lg={6}>
-                        <Field
-                            type="text"
-                            as={CustomField}
-                            name="urlImage"
-                            label="Image 3"
-                            autoFocus
-                        />                              
-                       </Grid>                  
+                        />
+                    </Grid>               
                         <Grid container item xs={12} md={6} lg={6}>
                             <Button
                                     type="submit"
@@ -128,7 +86,7 @@ export default function EditProduct() {
                                     color="primary"
                                     className={classes.submit}
                                  >
-                                    Update Product
+                                    Add product Image
                             </Button>
                         </Grid>
                         </Grid>
