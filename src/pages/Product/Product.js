@@ -63,8 +63,6 @@ export default function Product() {
     console.log(product)
     // console.log(urlImage)
 
-    const loggedAdmin = jwtDecode(localStorage.getItem('token'))
-    // console.log(loggedAdmin, "logged")
 
     useEffect(() => {
         dispatch(getAllAdmin());
