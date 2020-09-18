@@ -1,9 +1,10 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
+
 import { Dashboard, Admins, Login, 
         CreateAdmin, EditAdmin, PetCategories, 
-        CreatePetCategory, EditPetCategory, ProductAdmin, Breeds,
+        CreatePetCategory, EditPetCategory, Product, EditProduct, AddProduct, Breeds,
         CreateBreed,
         EditBreed 
     } from "../pages";
@@ -24,8 +25,15 @@ export default function Routes() {
                 <CreateAdmin />
             </Route>
             <Route exact path="/dashboard/product">
-                <ProductAdmin />
+                <Product />
             </Route>
+            <Route exact path="/dashboard/product/add">
+                <AddProduct />
+            </Route>
+            <Route exact path="/dashboard/product/edit/:id">
+                <EditProduct />
+            </Route>
+            
             {/* <Route exact path="/dashboard/admins/edit/:id">
                 <EditAdmin />
             </Route> */}

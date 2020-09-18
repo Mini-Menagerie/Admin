@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function EditAdmin() {
+export default function EditProduct() {
     const classes = useStyles();
 
     return (
