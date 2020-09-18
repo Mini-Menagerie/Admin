@@ -56,8 +56,6 @@ export default function Admin() {
     const petCategory = useSelector((state) => state.petCategory);
     console.log(petCategory)
 
-    const loggedAdmin = jwtDecode(localStorage.getItem('token'))
-    // console.log(loggedAdmin, "logged")
 
     useEffect(() => {
         dispatch(getAllAdmin());
