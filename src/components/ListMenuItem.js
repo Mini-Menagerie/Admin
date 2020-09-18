@@ -22,6 +22,7 @@ import jwtDecode from "jwt-decode";
 import Badge from '@material-ui/core/Badge';
 import {getAllEvents } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
+import { FavoriteBorder } from "@material-ui/icons";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -114,6 +115,14 @@ export default function ListMenuItem() {
                         <PetsRounded color="primary" />
                     </ListItemIcon>
                         <ListItemText primary="Pet Category" />
+                </ListItem>
+            </Link>
+            <Link to="/dashboard/breeds" className={classes.link}>
+                <ListItem button>
+                    <ListItemIcon>
+                        <FavoriteBorder color="primary" />
+                    </ListItemIcon>
+                        <ListItemText primary="Breeds" />
                 </ListItem>
             </Link>
          

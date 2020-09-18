@@ -8,5 +8,8 @@ export { default as EditProduct } from '../pages/Product/EditProduct';
 export { default as PetCategories} from '../pages/PetCategories/PetCategories';
 export { default as CreatePetCategory} from '../pages/PetCategories/CreatePetCategory';
 export { default as EditPetCategory} from '../pages/PetCategories/EditPetCategory';
+export { default as Breeds } from '../pages/Breed/Breed';
+export { default as EditBreed } from '../pages/Breed/EditBreed';
+export { default as CreateBreed } from '../pages/Breed/CreateBreed';
 
 

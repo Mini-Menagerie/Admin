@@ -1,12 +1,13 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import { Container, Grid, Button, InputLabel, Select, FormControl } from "@material-ui/core";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useDispatch } from "react-redux";
-import { addPetCategory } from '../../../redux/actions';
+import { useDispatch,useSelector } from "react-redux";
+import { addBreed, getAllCategoryPet } from '../../../redux/actions';
 import { useHistory } from "react-router-dom";
 import jwtDecode from "jwt-decode";
+import petCategory from "../../../redux/reducers/petCategory";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -22,13 +23,21 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function AddPetCategory() {
+export default function AddBreed() {
     const classes = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
-    // const loggedAdmin = jwtDecode(localStorage.getItem('token'))
-    // console.log(loggedAdmin.role, "logged")
+    const categoryPet = useSelector(state => state.petCategory)
 
+    let [category, setCategory] = useState([
+        {_id: "5f636c3107ecf0153f55cfca", categoryName: 'Cat'},
+        {_id: "5f636c8d07ecf0153f55cfcd", categoryName: 'Dog'},
+    ])
+    
+    useEffect(() => {
+        dispatch(getAllCategoryPet());
+    },[dispatch])
+    console.log(category[0]._id);
     const CustomField = (props) => {
         return (
             <TextField
@@ -42,27 +51,28 @@ export default function AddPetCategory() {
         );
     };
 
-    // const SelectField = (props) => {
-    //     return (
-    //         <Select
-    //             native
-    //             label="Role"
-    //             inputProps={{
-    //                 name: 'role',
-    //             }}
-    //             {...props}
-    //         ></Select>
-    //     );
-    // };
+    const SelectField = (props) => {
+        return (
+            <Select
+                native
+                label="Pet Category"
+                inputProps={{
+                    name: 'idCategoryPet',
+                }}
+                {...props}
+            ></Select>
+        );
+    };
 
     return (
         <Container  >
             <Formik 
                 initialValues={{
-                    categoryName: "",
+                    idCategoryPet: "",
+                    breedName: "",
                 }}
-                onSubmit={(values, history) => {
-                    dispatch(addPetCategory(values, history));
+                onSubmit={(values) => {
+                    dispatch(addBreed(values, history));
                 }}
             >
                 {() => (
@@ -79,12 +89,34 @@ export default function AddPetCategory() {
                 >
                     <Grid container item xs={12} md={6} lg={6}>
                         <Field
-                            type="categoryName"
+                            type="breedName"
                             as={CustomField}
-                            name="categoryName"
-                            label="Category Name"
+                            name="breedName"
+                            label="Breed Name"
                             autoFocus
                         />
+                    </Grid>
+                    <Grid container item xs={12} md={6} lg={6}>
+                    <FormControl variant="outlined" className={classes.field}>
+                       
+                        <InputLabel>
+                            Category Pet
+                        </InputLabel>
+                        <Field 
+                            name="idCategoryPet" 
+                            as={SelectField} 
+                            placeholder="Category Pet"
+                            variant="outlined"
+                            margin="normal"
+                        >
+                            <option value=""></option>
+                            <option value={category[0]._id}>Cat</option>
+                            <option value={category[1]._id}>Dog</option>
+                             
+                        
+                        </Field>
+                        
+                    </FormControl>
                     </Grid>
                     <Grid container item xs={12} md={6} lg={6}>
                         <Button

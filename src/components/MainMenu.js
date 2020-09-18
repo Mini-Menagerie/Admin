@@ -17,7 +17,7 @@ import { Box } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
     root: {
         display: "flex",
-        backgroundColor: '#e3f2fd',
+        backgroundColor: '#66de64',
     },
     toolbarIcon: {
         display: "flex",
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     drawerPaper: {
         position: "relative",
         whiteSpace: "nowrap",
-        backgroundImage: `url(${SideImage})`,
+        backgroundColor: '#66de64',
         backgroundSize: 'cover',
         objectFit: '',
         width: '100%',
