@@ -71,6 +71,10 @@ export default function AddProduct() {
           categories: "",
           price: "",
           stock: "",
+          image: {
+            id: '',
+            urlImage: ''
+          }
 
         }}
         onSubmit={(values) => {
@@ -118,6 +122,14 @@ export default function AddProduct() {
                   as={CustomField}
                   name="stock"
                   label="Stock"
+                />
+              </Grid>
+              <Grid container item xs={12} md={6} lg={6}>
+                <Field
+                  type="text"
+                  as={CustomField}
+                  name="image.image"
+                  label="image"
                 />
               </Grid>
               <Grid container item xs={12} md={6} lg={6}>
