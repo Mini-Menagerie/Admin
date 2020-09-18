@@ -12,10 +12,12 @@ import RecordVoiceOverRoundedIcon from '@material-ui/icons/RecordVoiceOverRounde
 import PeopleAltRoundedIcon from '@material-ui/icons/PeopleAltRounded';
 import TimelineRoundedIcon from '@material-ui/icons/TimelineRounded';
 import PetsRounded from "@material-ui/icons/PetsRounded";
+import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 import { Link } from "react-router-dom";
 import { Grid, Box } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Divider from '@material-ui/core/Divider';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import DraftsRoundedIcon from '@material-ui/icons/DraftsRounded';
 import ImportContactsRoundedIcon from '@material-ui/icons/ImportContactsRounded';
 import jwtDecode from "jwt-decode";
@@ -104,7 +106,7 @@ export default function ListMenuItem() {
             <Link to="/dashboard/product" className={classes.link}>
                 <ListItem button>
                     <ListItemIcon>
-                        <DesktopMacRoundedIcon color="primary" />
+                        <ShoppingCartIcon color="primary" />
                     </ListItemIcon>
                         <ListItemText primary="Products" />
                  </ListItem>
@@ -123,6 +125,14 @@ export default function ListMenuItem() {
                         <FavoriteBorder color="primary" />
                     </ListItemIcon>
                         <ListItemText primary="Breeds" />
+                </ListItem>
+            </Link>
+            <Link to="/dashboard/transaction" className={classes.link}>
+                <ListItem button>
+                    <ListItemIcon>
+                        <AccountBalanceWalletIcon color="primary" />
+                    </ListItemIcon>
+                        <ListItemText primary="Transaction" />
                 </ListItem>
             </Link>
          

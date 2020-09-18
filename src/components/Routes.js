@@ -5,9 +5,10 @@ import { Switch, Route } from "react-router-dom";
 import { Dashboard, Admins, Login, 
         CreateAdmin, EditAdmin, PetCategories, 
         CreatePetCategory, EditPetCategory, Product, EditProduct, AddProduct, Breeds,
-        CreateBreed,
-        EditBreed 
+        CreateBreed, EditBreed,
+        Transaction, ProductPurchased, AdoptionTransaction
     } from "../pages";
+
 
 export default function Routes() {
     return (
@@ -54,6 +55,15 @@ export default function Routes() {
             </Route>
             <Route exact path="/dashboard/breeds/create">
                 <CreateBreed/>
+            </Route>
+            <Route exact path="/dashboard/transaction">
+                <Transaction/>
+            </Route>
+            <Route exact path="/dashboard/transaction/productPurchased">
+                <ProductPurchased/>
+            </Route>
+            <Route exact path="/dashboard/transaction/adoptionTransaction">
+                <AdoptionTransaction/>
             </Route>
 
         </Switch>
