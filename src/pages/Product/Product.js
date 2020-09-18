@@ -59,9 +59,9 @@ export default function Product() {
     const dispatch = useDispatch();
     const admins = useSelector((state) => state.admin);
     const product = useSelector((state) => state.product);
-    const urlImage = useSelector((state) => state.urlImage);
-    console.log(urlImage)
-    // console.log(admins)
+    const urlImage = useSelector((state) => state.image);
+    console.log(product)
+    // console.log(urlImage)
 
     const loggedAdmin = jwtDecode(localStorage.getItem('token'))
     // console.log(loggedAdmin, "logged")
@@ -112,7 +112,7 @@ export default function Product() {
                                 <TableCell >
                                     <Typography className={classes.text} variant="h6">No</Typography>
                                 </TableCell>
-                                <TableCell align="left">
+                                <TableCell align="center">
                                     <Typography className={classes.text} variant="h6">Product Name</Typography>
                                 </TableCell>
                                 <TableCell align="right" >
@@ -137,35 +137,27 @@ export default function Product() {
                                     <TableCell component="th" scope="row">
                                         <Typography variant="h6">{index+1}</Typography>
                                     </TableCell>
-                                    <TableCell align="left">
+                                    <TableCell align="center">
                                         <Typography variant="h6">{row.productName}</Typography>
                                     </TableCell>
-                                    <TableCell align="left">
+                                    <TableCell align="center">
                                         <Typography variant="h6">{row.price}</Typography>
                                     </TableCell>
-                                    <TableCell align="right">
+                                    <TableCell align="center">
                                         <Typography variant="h6">{row.stock}</Typography>
                                     </TableCell>
                                     <TableCell align="left">
                                     <CardMedia
                                             className={classes.media}
-                                            image={row.urlImage}
+                                            image={row.image[0]}
                                             title="urlImage"
                                         />
-                                    <CardMedia
-                                            className={classes.media}
-                                            image={row.urlImage}
-                                            title="urlImage"
-                                        />     
-                                    <CardMedia
-                                        className={classes.media}
-                                        image={row.urlImage}
-                                        title="urlImage"
-                                    />
+                                     
+                                   
                                      
                                     </TableCell>
                                     {index >= 0 &&
-                                    <TableCell align="left">
+                                    <TableCell align="center">
                                     
                                     <Link
                                             to={`/dashboard/product/edit/${row._id}`}
@@ -177,7 +169,7 @@ export default function Product() {
                                                 className={classes.button}
                                                 startIcon={<EditIcon />}
                                             >
-                                                Edit
+                                                Add Image
                                             </Button>
                                         </Link>   
                                         <Button

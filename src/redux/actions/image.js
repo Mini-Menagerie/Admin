@@ -2,22 +2,21 @@ import axios from '../../helpers/axios';
 
 export const getAllImage = () => async (dispatch) => {
     let result = await axios.get('/productImage')
-    console.log(result);
-
     await dispatch({
         type: "GET_ALL_IMAGE",
         payload: result.data.result
     })
 }
 
-export const addImage = (values) => async (dispatch) => {
-    let result = await axios.post('/productImage/register', values)
+export const addImage = (values, history) => async (dispatch) => {
+    let result = await axios.post('/productImage/create', values)
     console.log(result);
 
     await dispatch({
         type: "ADD_ONE_IMAGE",
         payload: result.data.message
     })
+    history.goBack()
 
 }
 

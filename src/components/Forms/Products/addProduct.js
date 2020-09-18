@@ -62,12 +62,10 @@ export default function AddProduct() {
                     productName: "",
                     price: "",
                     stock: "",
-                    urlImage: "",
                 }}
                
                 onSubmit={(values) => {
-                    console.log(values)
-                    dispatch(addProduct(values));
+                    dispatch(addProduct(values, history));
                 }}
             >
                 {() => (
@@ -106,34 +104,7 @@ export default function AddProduct() {
                             name="stock"
                             label="Stock"
                         />
-                   </Grid>             
-                        <Grid container item xs={12} md={6} lg={6}>
-                        <Field
-                            type="text"
-                            as={CustomField}
-                            name="urlImage"
-                            label="Image 1"
-                            autoFocus
-                        />                              
-                       </Grid> 
-                       <Grid container item xs={12} md={6} lg={6}>
-                        <Field
-                            type="text"
-                            as={CustomField}
-                            name="urlImage"
-                            label="Image 2"
-                            autoFocus
-                        />                              
-                       </Grid> 
-                       <Grid container item xs={12} md={6} lg={6}>
-                        <Field
-                            type="text"
-                            as={CustomField}
-                            name="urlImage"
-                            label="Image 3"
-                            autoFocus
-                        />                              
-                       </Grid>                       
+                   </Grid>                                   
                     <Grid container item xs={12} md={6} lg={6}>
                         <Button
                             type="submit"
