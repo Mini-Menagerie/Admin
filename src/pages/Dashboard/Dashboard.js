@@ -2,10 +2,11 @@ import React, { Fragment, useEffect} from "react";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from "@material-ui/core";
-import {getAllAdmin, getAllCategoryPet } from "../../redux/actions";
+import {getAllAdmin, getAllCategoryPet, getAllProducts } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import CountUp from 'react-countup';
 import { Box } from "@material-ui/core";
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -70,11 +71,13 @@ export default function Dashboard() {
     const dispatch = useDispatch();
     const allAdmin = useSelector((state) => state.admin);
     const petCategory = useSelector((state) => state.petCategory);
+    const product = useSelector((state) => state.product);
     console.log(petCategory);
 
     useEffect(() => {
         dispatch(getAllAdmin());
         dispatch(getAllCategoryPet());
+        dispatch(getAllProducts())
     }, [dispatch]);
 
     return (
@@ -113,6 +116,23 @@ export default function Dashboard() {
                                     <CountUp
                                         start={0}
                                         end={petCategory.length}
+                                        duration={4}
+                                        useEasing={true}
+                                        useGrouping={true}
+                                        separator=" "
+                                    />
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                        <Grid elevation={3} className={classes.paper} item xs={false} sm={12} md={5} lg={3}  >
+                            <Typography variant="h5">
+                                Products
+                            </Typography>
+                            <Grid className={classes.actspeaker} >
+                                <Typography variant="h4">
+                                    <CountUp
+                                        start={0}
+                                        end={product.length}
                                         duration={4}
                                         useEasing={true}
                                         useGrouping={true}

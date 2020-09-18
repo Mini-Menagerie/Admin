@@ -9,5 +9,8 @@ export { default as FormAddAdmin } from "./Forms/AddAdmin";
 export { default as FormEditAdmin } from "./Forms/EditAdmin";
 export { default as Routes } from "./Routes";
 export { default as SubMenu } from "./SubMenu";
-export {default as FormAddPetCategory} from './Forms/PetCategory/AddPetCategory';
-export {default as FormEditPetCategory} from './Forms/PetCategory/EditPetCategory';
+export { default as FormAddPetCategory } from './Forms/PetCategory/AddPetCategory';
+export { default as FormEditPetCategory } from './Forms/PetCategory/EditPetCategory';
+export { default as FormAddProduct } from './Forms/Products/addProduct';
+export { default as FormEditProduct } from './Forms/Products/editProduct';
+
