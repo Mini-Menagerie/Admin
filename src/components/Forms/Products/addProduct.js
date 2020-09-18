@@ -126,7 +126,7 @@ export default function AddProduct() {
               </Grid>
               <Grid container item xs={12} md={6} lg={6}>
                 <Field
-                  type="file"
+                  type="text"
                   as={CustomField}
                   name="image.image"
                   label="image"
