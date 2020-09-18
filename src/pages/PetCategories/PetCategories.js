@@ -54,7 +54,7 @@ export default function Admin() {
     const dispatch = useDispatch();
     const admins = useSelector((state) => state.admin);
     const petCategory = useSelector((state) => state.petCategory);
-    // console.log(admins)
+    console.log(petCategory)
 
     const loggedAdmin = jwtDecode(localStorage.getItem('token'))
     // console.log(loggedAdmin, "logged")
@@ -80,11 +80,13 @@ export default function Admin() {
                         <Grid>
                             
                             <Link
-                                to="/dashboard/petCategory/create"
+                                // to="/dashboard/petCategory/create"
+                                to="#"
                                 className={classes.link}
                             >
                                 <Button
                                     variant="contained"
+                                    disabled
                                     color="secondary"
                                     className={classes.button}
                                     startIcon={<AddIcon />}
@@ -125,14 +127,20 @@ export default function Admin() {
                                     {index >= 0 &&
                                     <TableCell align="right">
                                         <Link
-                                            to={`/dashboard/petCategory/edit/${row._id}`}
+                                            // to={`/dashboard/petCategory/edit/${row._id}`}
+                                            to="#"
                                             className={classes.link}
                                         >
                                             <Button
                                                 variant="contained"
+                                                disabled
                                                 color="secondary"
                                                 className={classes.button}
                                                 startIcon={<EditIcon />}
+                                                onClick={() =>
+                                                alert('Cannot Edit Default Pet Category')
+
+                                                }
                                             >
                                                 Edit
                                             </Button>
@@ -141,11 +149,12 @@ export default function Admin() {
                                         <Button
                                             variant="contained"
                                             color="secondary"
+                                            disabled
                                             className={classes.button}
                                             startIcon={<DeleteIcon />}
                                             onClick={() =>
-                                                
-                                                dispatch(deletePetCategory(row._id))
+                                                alert('Cannot Delete Default Pet Category')
+                                                // dispatch(deletePetCategory(row._id))
                                             }
                                         >
                                             Delete

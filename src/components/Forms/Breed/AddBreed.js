@@ -31,7 +31,7 @@ export default function AddBreed() {
 
     let [category, setCategory] = useState([
         {_id: "5f636c3107ecf0153f55cfca", categoryName: 'Cat'},
-        {_id: "5f636c8d07ecf0153f55cfcd", categoryName: 'Dog'},
+        {_id: "5f64485746168f24214a72a5", categoryName: 'Dog'},
     ])
     
     useEffect(() => {
