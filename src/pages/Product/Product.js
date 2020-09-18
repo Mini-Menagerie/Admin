@@ -115,6 +115,9 @@ export default function Product() {
                                 <TableCell align="center">
                                     <Typography className={classes.text} variant="h6">Product Name</Typography>
                                 </TableCell>
+                                <TableCell align="center">
+                                    <Typography className={classes.text} variant="h6">Categories</Typography>
+                                </TableCell>
                                 <TableCell align="right" >
                                     <Typography className={classes.tablehead} variant="h6">Price</Typography>
                                 </TableCell>
@@ -139,6 +142,9 @@ export default function Product() {
                                     </TableCell>
                                     <TableCell align="center">
                                         <Typography variant="h6">{row.productName}</Typography>
+                                    </TableCell>
+                                    <TableCell align="center">
+                                        <Typography variant="h6">{row.categories}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
                                         <Typography variant="h6">{row.price}</Typography>
