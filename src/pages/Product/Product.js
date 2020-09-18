@@ -155,7 +155,7 @@ export default function Product() {
                                     <TableCell align="left">
                                     <CardMedia
                                             className={classes.media}
-                                            image={row.image[0]}
+                                            image={row.image[0].image}
                                             title="urlImage"
                                         />
                                      
@@ -177,7 +177,22 @@ export default function Product() {
                                             >
                                                 Add Image
                                             </Button>
-                                        </Link>   
+                                        </Link>
+                                        <Link
+                                            to={`/dashboard/product/editItem/${row._id}`}
+                                            className={classes.link}
+                                        >
+                                            <Button
+                                                variant="contained"
+                                                color="secondary"
+                                                className={classes.button}
+                                                startIcon={<EditIcon />}
+                                            >
+                                                Edit
+                                            </Button>
+                                        </Link>  
+
+
                                         <Button
                                             variant="contained"
                                             color="secondary"

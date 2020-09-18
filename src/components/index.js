@@ -15,4 +15,5 @@ export {default as FormAddBreed} from './Forms/Breed/AddBreed';
 export {default as FormEditBreed} from './Forms/Breed/EditBreed';
 export { default as FormAddProduct } from './Forms/Products/addProduct';
 export { default as FormEditProduct } from './Forms/Products/editProduct';
+export { default as FormEditItemProduct } from './Forms/Products/editItemProduct';
 
