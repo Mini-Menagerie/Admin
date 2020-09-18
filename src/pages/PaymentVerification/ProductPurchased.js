@@ -83,7 +83,7 @@ export default function ProductPurchased() {
                          <TableCell>
                            <Typography className={classes.text} variant='h6'>No</Typography>
                          </TableCell>
-                         <TableCell align='left'>
+                         {/* <TableCell align='left'>
                            <Typography className={classes.text} variant='h6'>Id Transaction</Typography>
                          </TableCell>
                          <TableCell align='left'>
@@ -100,7 +100,7 @@ export default function ProductPurchased() {
                          </TableCell>
                          <TableCell align='left'>
                            <Typography className={classes.text} variant='h6'>Action Button</Typography>
-                         </TableCell>                         
+                         </TableCell>                          */}
                       </TableRow>
                    </TableHead>
                 </TableContainer>
