@@ -12,5 +12,5 @@ export { default as EditPetCategory} from '../pages/PetCategories/EditPetCategor
 export { default as Breeds } from '../pages/Breed/Breed';
 export { default as EditBreed } from '../pages/Breed/EditBreed';
 export { default as CreateBreed } from '../pages/Breed/CreateBreed';
-
+export { default as AdoptionTransaction } from '../pages/AdoptionTransaction/AdoptionTransaction';
 

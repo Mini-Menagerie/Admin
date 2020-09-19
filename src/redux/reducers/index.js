@@ -6,8 +6,9 @@ import petCategory from './petCategory';
 import breed from './breed';
 import product from './product';
 import image from './image'
+import listAdoptionTransaction from './listAdoptionTransaction'
 
 
 
-export default combineReducers({ admin, auth, petCategory, breed, product, image });
+export default combineReducers({ admin, auth, petCategory, breed, product, image, listAdoptionTransaction });
 
