@@ -22,7 +22,7 @@ import jwtDecode from "jwt-decode";
 import Badge from "@material-ui/core/Badge";
 import { getAllEvents } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { FavoriteBorder, ShoppingCart } from "@material-ui/icons";
+import { FavoriteBorder, FormatListBulleted, ShoppingCart } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   text: {
@@ -119,6 +119,14 @@ export default function ListMenuItem() {
             <FavoriteBorder color="primary" />
           </ListItemIcon>
           <ListItemText primary="Breeds" />
+        </ListItem>
+      </Link>
+      <Link to="/dashboard/petAdoptionTransaction" className={classes.link}>
+        <ListItem button>
+          <ListItemIcon>
+            <FormatListBulleted color="primary" />
+          </ListItemIcon>
+          <ListItemText primary="Pet Adoption Transaction" />
         </ListItem>
       </Link>
 
