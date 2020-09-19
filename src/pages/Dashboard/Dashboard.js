@@ -2,7 +2,7 @@ import React, { Fragment, useEffect} from "react";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from "@material-ui/core";
-import {getAllAdmin, getAllCategoryPet, getAllProducts } from "../../redux/actions";
+import {getAllAdmin, getAllCategoryPet, getAllProducts, getAllBreed } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import CountUp from 'react-countup';
 import { Box } from "@material-ui/core";
@@ -71,13 +71,14 @@ export default function Dashboard() {
     const dispatch = useDispatch();
     const allAdmin = useSelector((state) => state.admin);
     const petCategory = useSelector((state) => state.petCategory);
-
+    const breed = useSelector((state) => state.breed);
     const product = useSelector((state) => state.product);
 
     useEffect(() => {
         dispatch(getAllAdmin());
         dispatch(getAllCategoryPet());
         dispatch(getAllProducts())
+        dispatch(getAllBreed())
     }, [dispatch]);
 
     return (
@@ -99,6 +100,23 @@ export default function Dashboard() {
                                     <CountUp
                                         start={0}
                                         end={allAdmin.length}
+                                        duration={4}
+                                        useEasing={true}
+                                        useGrouping={true}
+                                        separator=" "
+                                    />
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                        <Grid elevation={3} className={classes.paper} item xs={false} sm={12} md={5} lg={3}  >
+                            <Typography variant="h5">
+                                 Breed
+                            </Typography>
+                            <Grid className={classes.actspeaker} >
+                                <Typography variant="h4">
+                                    <CountUp
+                                        start={0}
+                                        end={breed.length}
                                         duration={4}
                                         useEasing={true}
                                         useGrouping={true}
