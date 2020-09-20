@@ -11,7 +11,7 @@ export const getAllBreed = () => async (dispatch) => {
 }
 
 export const addBreed = (values, history) => async (dispatch) => {
-    let result = await axios.post('/breed/register', values)
+    let result = await axios.post('/breed/create', values)
     console.log(result);
 
     await dispatch({

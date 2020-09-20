@@ -30,20 +30,13 @@ const useStyles = makeStyles((theme) => ({
 },
 }));
 
-export default function AddProduct() {
+export default function CreateAdoptionTransaction() {
   const classes = useStyles();
   const dispatch = useDispatch();
   const history = useHistory();
 
   let [values, setValues] = useState({
-    productName: "",
-    categories: "",
-    price: "",
-    stock: "",
-    image: {
-      id: "",
-      image: "",
-    },
+    
   });
   const handleChange = (event) => {
     setValues({

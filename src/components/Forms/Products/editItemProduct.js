@@ -4,9 +4,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import { Container, Grid, Button } from "@material-ui/core";
 import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import { useLocation, useHistory } from "react-router-dom";
 import { Formik, Form, Field} from "formik";
-import { updatePetCategory } from "../../../redux/actions";
+import { updateProduct } from "../../../redux/actions";
 
 const useStyles = makeStyles((theme) => ({
     field: {
@@ -18,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function EditPetCategory() {
+export default function EditAdmin() {
     const classes = useStyles();
 
     const CustomField = (props) => {
@@ -35,10 +36,8 @@ export default function EditPetCategory() {
 
     const dispatch = useDispatch();
     const { pathname } = useLocation();
-    // const petCategory = useSelector((state) => state.petCategory);
     const history = useHistory();
 
-    // console.log(admins, 'ssss')
 
     const id = pathname.split("/")[4];
 
@@ -50,12 +49,15 @@ export default function EditPetCategory() {
         <Container>
             <Formik
                 initialValues={{
-                    categoryName: "",
+                   productName: '',
+                   categories: '',
+                   price: '',
+                   stock: '',
                 }}
                 enableReinitialize={true}
                
                 onSubmit={(values) => {
-                    dispatch(updatePetCategory(values, id, history));
+                    dispatch(updateProduct(values, id, history));
                 }}
             >
                 {() => (
@@ -71,14 +73,37 @@ export default function EditPetCategory() {
                                 <Field
                                     type="text"
                                     as={CustomField}
-                                    name="categoryName"
-                                    label="Category Name"
+                                    name="productName"
+                                    label="Product Name"
                                     required
                                     autoFocus
                                 />
                               
                             </Grid>
-                           
+                            <Grid container item xs={12} md={6} lg={6}>
+                                <Field
+                                    type="text"
+                                    as={CustomField}
+                                    name="categories"
+                                    label="Categories"
+                                />
+                            </Grid>
+                            <Grid container item xs={12} md={6} lg={6}>
+                                <Field
+                                    type="text"
+                                    as={CustomField}
+                                    name="price"
+                                    label="Price"
+                                />
+                            </Grid>
+                            <Grid container item xs={12} md={6} lg={6}>
+                                <Field
+                                    type="text"
+                                    as={CustomField}
+                                    name="stock"
+                                    label="Stock"
+                                />
+                            </Grid>
                             <Grid container item xs={12} md={6} lg={6}>
                                 <Button
                                     type="submit"

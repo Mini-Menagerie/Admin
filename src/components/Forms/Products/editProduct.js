@@ -1,12 +1,12 @@
 // import React, { useEffect } from "react";
-import React from "react";
+import React, {useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
-import { Container, Grid, Button } from "@material-ui/core";
-import { useDispatch, useSelector } from "react-redux";
+import { Container, Grid, Button,FormControl } from "@material-ui/core";
+import { useDispatch } from "react-redux";
 import { useLocation, useHistory } from "react-router-dom";
-import { Formik, Form, Field, ErrorMessage} from "formik";
-import { updateProduct, addImage } from "../../../redux/actions";
+import { addImage } from "../../../redux/actions";
+import ReactFilestack from "filestack-react";
+const filestackapi = "AugqfuGzTQouENQs5OOe2z";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -22,77 +22,52 @@ const useStyles = makeStyles((theme) => ({
 export default function EditProduct() {
     const classes = useStyles();
 
-    const CustomField = (props) => {
-        return (
-            <TextField
-                fullWidth
-                variant="outlined"
-                margin="normal"
-                className={classes.field}
-                {...props}
-            />
-        );
-    };
-
     const dispatch = useDispatch();
     const { pathname } = useLocation();
-    const product = useSelector((state) => state.Product);
+    // const product = useSelector((state) => state.Product);
     const history = useHistory();
-
-    // console.log(admins, 'ssss')
 
     const id = pathname.split("/")[4];
 
     // useEffect(() => {
     //     dispatch(getAdminByID(id));
     // }, [dispatch, id]);
+    let [values, setValues] = useState({
+        idProduct: id,
+        urlImage: ''
+      });
+      const handleSubmit = (event) => {
+        console.log(event);
+        event.preventDefault();
+        dispatch(addImage(values, history));
+      };
 
     return (
-        <Container>
-            <Formik
-                initialValues={{
-                    idProduct: id,
-                    urlImage: ''
-                }}
-                enableReinitialize={true}
-               
-                onSubmit={(values) => {
-                    dispatch(addImage(values, history));
-                }}
-            >
-                {() => (
-                    <Form className={classes.form}>
-                        <Grid
-                            container
-                            justify="center"
-                            direction="column"
-                            alignItems="center"
-                            spacing={2}
-                        >
-                            <Grid container item xs={12} md={6} lg={6}>
-                        <Field
-                            type="urlImage"
-                            as={CustomField}
-                            name="urlImage"
-                            label="URL Image"
-                            autoFocus
-                        />
-                    </Grid>               
-                        <Grid container item xs={12} md={6} lg={6}>
-                            <Button
-                                    type="submit"
-                                    fullWidth
-                                    variant="contained"
-                                    color="primary"
-                                    className={classes.submit}
-                                 >
-                                    Add product Image
-                            </Button>
-                        </Grid>
-                        </Grid>
-                    </Form>
-                )}
-            </Formik>
+        <Container className={classes.field}>
+           <FormControl onSubmit={handleSubmit}>
+        <Grid
+          container
+          justify="center"
+          direction="column"
+          alignItems="center"
+          spacing={2}
+        >
+            Add Image
+          <ReactFilestack
+            apikey={`${filestackapi}`}
+            onSuccess={(result) => {
+              setValues({
+                ...values,
+                  urlImage: result.filesUploaded[0].url,
+              });
+            }}
+          />
+        <br/>
+          <Button className={classes.button} variant="outlined" color="primary" onClick={handleSubmit}>
+            Submit
+          </Button>
+        </Grid>
+      </FormControl>
         </Container>
     );
 }

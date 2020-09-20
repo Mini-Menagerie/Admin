@@ -12,17 +12,15 @@ import Container from "@material-ui/core/Container";
 import { Box } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import DeleteIcon from "@material-ui/icons/Delete";
-import EditIcon from "@material-ui/icons/Edit";
 import AddIcon from "@material-ui/icons/Add";
-import { CardMedia } from '@material-ui/core';
 import { Link } from "react-router-dom";
-import { getAllAdmin, getAllProducts, deleteProduct, updateProduct, getAllImage } from "../../redux/actions";
+import { acceptAdoptionTransaction, getAllListAdoptionTransaction, declineAdoptionTransaction } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
+import { Send, SentimentDissatisfied } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: '80%',
+        width: '100%',
         margin: 'auto',
         boxShadow: '0 0.7rem 1rem rgba(111, 115, 184, 0.8) !important',
         backgroundColor: '#3a6986',
@@ -53,19 +51,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function Product() {
+export default function AdoptionTransaction() {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const product = useSelector((state) => state.product);
-    console.log(product)
-    // console.log(urlImage)
-
+    const adoptionTransaction = useSelector((state) => state.listAdoptionTransaction);
+    console.log(adoptionTransaction);
 
     useEffect(() => {
-        dispatch(getAllAdmin());
-        dispatch(getAllProducts());
-        dispatch(updateProduct());
-        dispatch(getAllImage());
+        dispatch(getAllListAdoptionTransaction());
     }, [dispatch]);
 
     return (
@@ -79,21 +72,22 @@ export default function Product() {
                         alignItems="center"
                     >
                         <Grid>
-                            <Typography className={classes.tablehead} variant="h4">List Products</Typography>
+                            <Typography className={classes.tablehead} variant="h4">List Adoption Transaction</Typography>
                         </Grid>
                         <Grid>
                             
                             <Link
-                                to="/dashboard/product/add"
+                                to="/dashboard/petAdoptionTransaction/add"
                                 className={classes.link}
                             >
                                 <Button
+                                    disabled
                                     variant="contained"
                                     color="secondary"
                                     className={classes.button}
                                     startIcon={<AddIcon />}
                                 >
-                                    Add Product
+                                    Add Adoption Transaction
                                 </Button>
                             </Link>
                         </Grid>
@@ -108,19 +102,22 @@ export default function Product() {
                                     <Typography className={classes.text} variant="h6">No</Typography>
                                 </TableCell>
                                 <TableCell align="center">
-                                    <Typography className={classes.text} variant="h6">Product Name</Typography>
+                                    <Typography className={classes.text} variant="h6">Pet Name</Typography>
                                 </TableCell>
                                 <TableCell align="center">
-                                    <Typography className={classes.text} variant="h6">Categories</Typography>
+                                    <Typography className={classes.text} variant="h6">Pet Category</Typography>
                                 </TableCell>
                                 <TableCell align="right" >
-                                    <Typography className={classes.tablehead} variant="h6">Price</Typography>
+                                    <Typography className={classes.tablehead} variant="h6">Breed</Typography>
                                 </TableCell>
                                 <TableCell align="right" >
-                                    <Typography className={classes.tablehead} variant="h6">Quantity</Typography>
+                                    <Typography className={classes.tablehead} variant="h6">Owner Pet Name</Typography>
                                 </TableCell>
                                 <TableCell align="right" >
-                                    <Typography className={classes.tablehead} variant="h6">Image</Typography>
+                                    <Typography className={classes.tablehead} variant="h6">Adopter Pet Name</Typography>
+                                </TableCell>
+                                <TableCell align="right" >
+                                    <Typography className={classes.tablehead} variant="h6">Status</Typography>
                                 </TableCell>
                                 <TableCell align="right" >
                                     <Typography className={classes.tablehead} variant="h6">Action</Typography>
@@ -128,81 +125,65 @@ export default function Product() {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {Array.isArray(product) &&
-                            product.map((row, index) => (
+                            {Array.isArray(adoptionTransaction) &&
+                            adoptionTransaction.map((row, index) => (
                                 
                                 <TableRow key={row._id}>
                                     <TableCell component="th" scope="row">
                                         <Typography variant="h6">{index+1}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.productName}</Typography>
+                                        <Typography variant="h6">{row.petName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.categories}</Typography>
+                                        <Typography variant="h6">{row.petCategory}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.price}</Typography>
+                                        <Typography variant="h6">{row.breed}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.stock}</Typography>
+                                        <Typography variant="h6">{row.ownerPetName}</Typography>
+                                    </TableCell>
+                                    <TableCell align="center">
+                                        <Typography variant="h6">{row.adopterPetName}</Typography>
+                                    </TableCell>
+                                    <TableCell align="center">
+                                        <Typography variant="h6">{row.status}</Typography>
                                     </TableCell>
                                     <TableCell align="left">
-                                    <CardMedia
-                                            className={classes.media}
-                                            image={row.image[0].image}
-                                            title="urlImage"
-                                        />
-                                     
-                                   
-                                     
-                                    </TableCell>
                                     {index >= 0 &&
-                                    <TableCell align="center">
-                                    
-                                    <Link
-                                            to={`/dashboard/product/edit/${row._id}`}
-                                            className={classes.link}
-                                        >
-                                            <Button
-                                                variant="contained"
-                                                color="secondary"
-                                                className={classes.button}
-                                                startIcon={<EditIcon />}
-                                            >
-                                                Add Image
-                                            </Button>
-                                        </Link>
-                                        <Link
-                                            to={`/dashboard/product/editItem/${row._id}`}
-                                            className={classes.link}
-                                        >
-                                            <Button
-                                                variant="contained"
-                                                color="secondary"
-                                                className={classes.button}
-                                                startIcon={<EditIcon />}
-                                            >
-                                                Edit
-                                            </Button>
-                                        </Link>  
+                                    <TableCell align="center">  
 
 
                                         <Button
                                             variant="contained"
                                             color="secondary"
                                             className={classes.button}
-                                            startIcon={<DeleteIcon />}
+                                            startIcon={<Send />}
                                             onClick={() =>
-                                                
-                                                dispatch(deleteProduct(row._id))
+                                                dispatch(acceptAdoptionTransaction("Accepted", row._id))
                                             }
                                         >
-                                            Delete
+                                            Accept
+                                        </Button>
+
+                                        <Button
+                                            variant="contained"
+                                            color="secondary"
+                                            className={classes.button}
+                                            startIcon={<SentimentDissatisfied />}
+                                            onClick={() =>
+                                                dispatch(declineAdoptionTransaction("Decline", row._id))
+                                            }
+                                        >
+                                            Decline
                                         </Button>
                                     
                                     </TableCell>
                                     }
+                                     
+                                    </TableCell>
+                                    
                                 </TableRow>
                             ))}
                         </TableBody>

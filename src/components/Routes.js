@@ -3,10 +3,10 @@ import { Switch, Route } from "react-router-dom";
 
 
 import { Dashboard, Admins, Login, 
-        CreateAdmin, EditAdmin, PetCategories, 
+        CreateAdmin, PetCategories, 
         CreatePetCategory, EditPetCategory, Product, EditProduct, AddProduct, Breeds,
         CreateBreed, EditBreed,
-        Transaction, ProductPurchased, AdoptionTransaction
+        Transaction, ProductPurchased, AdoptionTransaction, EditItemProduct, CreateAdoptionTransaction
     } from "../pages";
 
 
@@ -34,6 +34,10 @@ export default function Routes() {
             <Route exact path="/dashboard/product/edit/:id">
                 <EditProduct />
             </Route>
+            <Route exact path="/dashboard/product/editItem/:id">
+                <EditItemProduct />
+            </Route>
+            
             
             {/* <Route exact path="/dashboard/admins/edit/:id">
                 <EditAdmin />
@@ -56,15 +60,19 @@ export default function Routes() {
             <Route exact path="/dashboard/breeds/create">
                 <CreateBreed/>
             </Route>
+
             <Route exact path="/dashboard/transaction">
                 <Transaction/>
             </Route>
             <Route exact path="/dashboard/transaction/productPurchased">
                 <ProductPurchased/>
             </Route>
-            {/* <Route exact path="/dashboard/transaction/adoptionTransaction">
+            <Route exact path="/dashboard/transaction/adoptionTransaction">
                 <AdoptionTransaction/>
-            </Route> */}
+            </Route>
+             <Route exact path="/dashboard/petAdoptionTransaction/add">
+                <CreateAdoptionTransaction/>
+            </Route>
 
         </Switch>
     );

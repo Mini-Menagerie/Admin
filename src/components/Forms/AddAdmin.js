@@ -3,10 +3,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import { Container, Grid, Button, InputLabel, Select, FormControl } from "@material-ui/core";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useDispatch } from "react-redux";
-import { addAdmin } from "../../redux/actions";
-import { useHistory } from "react-router-dom";
-import jwtDecode from "jwt-decode";
+// import { useDispatch } from "react-redux";
+// import { addAdmin } from "../../redux/actions";
+// import { useHistory } from "react-router-dom";
+// import jwtDecode from "jwt-decode";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -24,8 +24,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AddAdmin() {
     const classes = useStyles();
-    const dispatch = useDispatch();
-    const history = useHistory();
+    // const dispatch = useDispatch();
+    // const history = useHistory();
     // const loggedAdmin = jwtDecode(localStorage.getItem('token'))
     // console.log(loggedAdmin.role, "logged")
 

@@ -6,7 +6,7 @@ import { MainMenu } from "./components";
 import { Login } from "./pages";
 import store from "./redux/store";
 import { Provider } from "react-redux";
-import PrivateRoute from "./privateRoute/PrivateRoute";
+// import PrivateRoute from "./privateRoute/PrivateRoute";
 
 function App() {
     return (

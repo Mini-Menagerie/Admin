@@ -16,9 +16,8 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import AddIcon from "@material-ui/icons/Add";
 import { Link } from "react-router-dom";
-import { getAllAdmin, deleteAdmin } from "../../redux/actions";
+import { getAllAdmin } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import jwtDecode from "jwt-decode";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -54,8 +53,6 @@ export default function Admin() {
     const dispatch = useDispatch();
     const admins = useSelector((state) => state.admin);
     console.log(admins)
-    const loggedAdmin = jwtDecode(localStorage.getItem('token'))
-    console.log(loggedAdmin, "logged")
 
     useEffect(() => {
         dispatch(getAllAdmin());
@@ -131,7 +128,7 @@ export default function Admin() {
                                     }
                                     {index > 0 &&
                                     <TableCell align="right">
-                                        {loggedAdmin.id===row._id &&
+                                        
                                         <Link
                                             to={`/dashboard/admins/edit/${row._id}`}
                                             className={classes.link}
@@ -146,7 +143,7 @@ export default function Admin() {
                                             </Button>
                                     </Link>
                                         
-                                        }
+                                        
                                         <Button
                                             variant="contained"
                                             color="secondary"

@@ -14,8 +14,8 @@ const useStyles = makeStyles((theme) => ({
         overflow: "auto",
         padding: '0',
         margin: '0',
-        backgroundColor: 'whitesmoke',
-        // backgroundSize: 'cover',
+        backgroundImage: `url(${bg2})`,
+        backgroundSize: 'cover',
     },
     container: {
         paddingTop: theme.spacing(4),
