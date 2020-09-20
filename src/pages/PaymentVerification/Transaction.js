@@ -6,7 +6,6 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import AdoptionTransaction from './AdoptionTransaction';
 import ProductPurchased from './ProductPurchased';
 
 
@@ -86,13 +85,13 @@ export default function Transaction() {
           onChange={handleChange}
           aria-label="nav tabs example"
         >
-          <LinkTab label="Adoption Transaction" href="/adoptionTransaction" {...a11yProps(0)} />
+          {/* <LinkTab label="Adoption Transaction" href="/adoptionTransaction" {...a11yProps(0)} /> */}
           <LinkTab label="Product Purchased" href="/productPurchased" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
-      <TabPanel value={value} index={0}>
+      {/* <TabPanel value={value} index={0}>
         <AdoptionTransaction/>
-      </TabPanel>
+      </TabPanel> */}
       <TabPanel value={value} index={1}>
         <ProductPurchased />
       </TabPanel>
