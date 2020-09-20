@@ -3,9 +3,9 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import { Container, Grid, Button } from "@material-ui/core";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useLocation, useHistory } from "react-router-dom";
-import { Formik, Form, Field, ErrorMessage} from "formik";
+import { Formik, Form, Field} from "formik";
 import { updateBreed } from "../../../redux/actions";
 
 const useStyles = makeStyles((theme) => ({
@@ -35,7 +35,7 @@ export default function EditBreed() {
 
     const dispatch = useDispatch();
     const { pathname } = useLocation();
-    const breeds = useSelector((state) => state.breed);
+    // const breeds = useSelector((state) => state.breed);
     const history = useHistory();
 
     // console.log(admins, 'ssss')

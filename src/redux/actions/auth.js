@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const login = (formData, history) => async () => {
-        const result = await axios.post('http://localhost:8000/adminAccount/login', formData)
+        await axios.post('http://localhost:8000/adminAccount/login', formData)
         .then(res=> {
             localStorage.setItem('menagerie', JSON.stringify(res.data.token))
             localStorage.setItem('admin', JSON.stringify(res.data.admin))

@@ -1,27 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Avatar from "@material-ui/core/Avatar";
 import Superadmin from "./assets/superadmin.jpg";
-import Admin from "./assets/admin.jpg";
 import DashboardRoundedIcon from "@material-ui/icons/DashboardRounded";
 import DesktopMacRoundedIcon from "@material-ui/icons/DesktopMacRounded";
-import RecordVoiceOverRoundedIcon from "@material-ui/icons/RecordVoiceOverRounded";
-import PeopleAltRoundedIcon from "@material-ui/icons/PeopleAltRounded";
-import TimelineRoundedIcon from "@material-ui/icons/TimelineRounded";
 import PetsRounded from "@material-ui/icons/PetsRounded";
 import { Link } from "react-router-dom";
 import { Grid, Box } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
-import DraftsRoundedIcon from "@material-ui/icons/DraftsRounded";
-import ImportContactsRoundedIcon from "@material-ui/icons/ImportContactsRounded";
 import jwtDecode from "jwt-decode";
-import Badge from "@material-ui/core/Badge";
-import { getAllEvents } from "../redux/actions";
-import { useDispatch, useSelector } from "react-redux";
 import { FavoriteBorder, FormatListBulleted, ShoppingCart } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
@@ -56,7 +47,6 @@ const useStyles = makeStyles((theme) => ({
 export default function ListMenuItem() {
   const classes = useStyles();
   const loggedAdmin = jwtDecode(localStorage.getItem("menagerie"));
-  const dispatch = useDispatch();
   console.log(loggedAdmin.email);
 
   // useEffect(() => {
@@ -129,6 +119,7 @@ export default function ListMenuItem() {
           <ListItemText primary="Pet Adoption Transaction" />
         </ListItem>
       </Link>
+      
 
       {/* <Link to="/dashboard/events" className={classes.link}>
                 <ListItem button>

@@ -3,9 +3,9 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import { Container, Grid, Button } from "@material-ui/core";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useLocation, useHistory } from "react-router-dom";
-import { Formik, Form, Field, ErrorMessage} from "formik";
+import { Formik, Form, Field} from "formik";
 import { updatePetCategory } from "../../../redux/actions";
 
 const useStyles = makeStyles((theme) => ({
@@ -35,7 +35,7 @@ export default function EditPetCategory() {
 
     const dispatch = useDispatch();
     const { pathname } = useLocation();
-    const petCategory = useSelector((state) => state.petCategory);
+    // const petCategory = useSelector((state) => state.petCategory);
     const history = useHistory();
 
     // console.log(admins, 'ssss')
