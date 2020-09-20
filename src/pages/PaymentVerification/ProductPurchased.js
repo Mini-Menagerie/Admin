@@ -62,6 +62,7 @@ export default function ProductPurchased() {
     const history = useHistory();
     const productPurchased = useSelector((state) => state.productPurchased);
     console.log(productPurchased);
+    let test = useSelector(state => console.log(state))
 
     useEffect(() => {
         dispatch(getAllProductPurchased());

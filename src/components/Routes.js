@@ -67,7 +67,7 @@ export default function Routes() {
             <Route exact path="/dashboard/transaction/productPurchased">
                 <ProductPurchased/>
             </Route>
-            <Route exact path="/dashboard/transaction/adoptionTransaction">
+            <Route exact path="/dashboard/petAdoptionTransaction/">
                 <AdoptionTransaction/>
             </Route>
              <Route exact path="/dashboard/petAdoptionTransaction/add">

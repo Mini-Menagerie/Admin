@@ -94,7 +94,7 @@ export default function ListMenuItem() {
             <Link to="/dashboard/product" className={classes.link}>
                 <ListItem button>
                     <ListItemIcon>
-                        <ShoppingCartIcon color="primary" />
+                        <ShoppingCart color="primary" />
                     </ListItemIcon>
                         <ListItemText primary="Products" />
                  </ListItem>
@@ -123,14 +123,14 @@ export default function ListMenuItem() {
                         <ListItemText primary="Transaction" />
                 </ListItem>
             </Link>
-     <Link to="/dashboard/petAdoptionTransaction" className={classes.link}>
-        <ListItem button>
-          <ListItemIcon>
-            <FormatListBulleted color="primary" />
-          </ListItemIcon>
-          <ListItemText primary="Pet Adoption Transaction" />
-        </ListItem>
-      </Link>
+          <Link to="/dashboard/petAdoptionTransaction" className={classes.link}>
+              <ListItem button>
+                <ListItemIcon>
+                  <FormatListBulleted color="primary" />
+                </ListItemIcon>
+                <ListItemText primary="Pet Adoption Transaction" />
+              </ListItem>
+            </Link>
          
             {/* <Link to="/dashboard/events" className={classes.link}>
                 <ListItem button>

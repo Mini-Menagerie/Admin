@@ -2,7 +2,7 @@ import axios from '../../helpers/axios';
 
 export const getAllProductPurchased= () => async (dispatch) => {
     let result = await axios.get('/productPurchased')
-
+    console.log(result);
     await dispatch({
         type: "GET_ALL_PRODUCT_PURCHASED",
         payload: result.data.result
