@@ -4,4 +4,6 @@ export * from './petCategory';
 export * from './products';
 export * from './image';
 export * from './breed';
+export * from './productPurchased';
 export * from './ListAdoptionTransaction';
+

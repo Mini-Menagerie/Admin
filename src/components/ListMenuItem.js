@@ -8,10 +8,13 @@ import Superadmin from "./assets/superadmin.jpg";
 import DashboardRoundedIcon from "@material-ui/icons/DashboardRounded";
 import DesktopMacRoundedIcon from "@material-ui/icons/DesktopMacRounded";
 import PetsRounded from "@material-ui/icons/PetsRounded";
+import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 import { Link } from "react-router-dom";
 import { Grid, Box } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
+
 import Divider from "@material-ui/core/Divider";
+
 import jwtDecode from "jwt-decode";
 import { FavoriteBorder, FormatListBulleted, ShoppingCart } from "@material-ui/icons";
 
@@ -65,53 +68,62 @@ export default function ListMenuItem() {
                     <img src={Admin} alt="" />
                 </Avatar>
             } */}
-        <Grid>
-          {/* <Typography variant="h5">{loggedAdmin.fullname}</Typography> */}
-          <Typography variant="h5">{loggedAdmin.email}</Typography>
-        </Grid>
-      </ListItem>
-      <Divider />
-      <Link to="/dashboard/dashboard" className={classes.link}>
-        <ListItem button>
-          <ListItemIcon>
-            <DashboardRoundedIcon color="primary" />
-          </ListItemIcon>
-          <ListItemText primary="Dashboard" />
-        </ListItem>
-      </Link>
-      <Link to="/dashboard/admins" className={classes.link}>
-        <ListItem button>
-          <ListItemIcon>
-            <DesktopMacRoundedIcon color="primary" />
-          </ListItemIcon>
-          <ListItemText primary="Admin" />
-        </ListItem>
-      </Link>
-      <Link to="/dashboard/product" className={classes.link}>
-        <ListItem button>
-          <ListItemIcon>
-            <ShoppingCart color="primary" />
-          </ListItemIcon>
-          <ListItemText primary="Products" />
-        </ListItem>
-      </Link>
-      <Link to="/dashboard/petCategory" className={classes.link}>
-        <ListItem button>
-          <ListItemIcon>
-            <PetsRounded color="primary" />
-          </ListItemIcon>
-          <ListItemText primary="Pet Category" />
-        </ListItem>
-      </Link>
-      <Link to="/dashboard/breeds" className={classes.link}>
-        <ListItem button>
-          <ListItemIcon>
-            <FavoriteBorder color="primary" />
-          </ListItemIcon>
-          <ListItemText primary="Breeds" />
-        </ListItem>
-      </Link>
-      <Link to="/dashboard/petAdoptionTransaction" className={classes.link}>
+
+                <Grid>
+                    {/* <Typography variant="h5">{loggedAdmin.fullname}</Typography> */}
+                    <Typography variant="h5">Test Admin</Typography>
+                </Grid>
+            </ListItem>
+            <Divider />
+            <Link to="/dashboard/dashboard" className={classes.link}>
+                <ListItem button >
+                    <ListItemIcon>
+                        <DashboardRoundedIcon color="primary" />
+                    </ListItemIcon>
+                        <ListItemText primary="Dashboard"/>
+                </ListItem>
+            </Link>
+            <Link to="/dashboard/admins" className={classes.link}>
+                <ListItem button>
+                    <ListItemIcon>
+                        <DesktopMacRoundedIcon color="primary" />
+                    </ListItemIcon>
+                        <ListItemText primary="Admin" />
+                </ListItem>
+            </Link>
+            <Link to="/dashboard/product" className={classes.link}>
+                <ListItem button>
+                    <ListItemIcon>
+                        <ShoppingCartIcon color="primary" />
+                    </ListItemIcon>
+                        <ListItemText primary="Products" />
+                 </ListItem>
+            </Link>
+            <Link to="/dashboard/petCategory" className={classes.link}>
+                <ListItem button>
+                    <ListItemIcon>
+                        <PetsRounded color="primary" />
+                    </ListItemIcon>
+                        <ListItemText primary="Pet Category" />
+                </ListItem>
+            </Link>
+            <Link to="/dashboard/breeds" className={classes.link}>
+                <ListItem button>
+                    <ListItemIcon>
+                        <FavoriteBorder color="primary" />
+                    </ListItemIcon>
+                        <ListItemText primary="Breeds" />
+                </ListItem>
+            </Link>
+            <Link to="/dashboard/transaction" className={classes.link}>
+                <ListItem button>
+                    <ListItemIcon>
+                        <AccountBalanceWalletIcon color="primary" />
+                    </ListItemIcon>
+                        <ListItemText primary="Transaction" />
+                </ListItem>
+            </Link>
+     <Link to="/dashboard/petAdoptionTransaction" className={classes.link}>
         <ListItem button>
           <ListItemIcon>
             <FormatListBulleted color="primary" />
@@ -119,9 +131,8 @@ export default function ListMenuItem() {
           <ListItemText primary="Pet Adoption Transaction" />
         </ListItem>
       </Link>
-      
-
-      {/* <Link to="/dashboard/events" className={classes.link}>
+         
+            {/* <Link to="/dashboard/events" className={classes.link}>
                 <ListItem button>
                     <ListItemIcon>
                         <RecordVoiceOverRoundedIcon color="primary" />
