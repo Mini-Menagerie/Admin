@@ -5,7 +5,8 @@ import auth from './auth';
 import petCategory from './petCategory';
 import breed from './breed';
 import product from './product';
-import image from './image'
+import image from './image';
+import payment from './payment';
 
 
 
