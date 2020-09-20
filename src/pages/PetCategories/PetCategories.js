@@ -16,9 +16,8 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import AddIcon from "@material-ui/icons/Add";
 import { Link } from "react-router-dom";
-import { getAllAdmin, getAllCategoryPet, deletePetCategory } from "../../redux/actions";
+import { getAllAdmin, getAllCategoryPet } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import jwtDecode from "jwt-decode";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -52,7 +51,6 @@ const useStyles = makeStyles((theme) => ({
 export default function Admin() {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const admins = useSelector((state) => state.admin);
     const petCategory = useSelector((state) => state.petCategory);
     console.log(petCategory)
 

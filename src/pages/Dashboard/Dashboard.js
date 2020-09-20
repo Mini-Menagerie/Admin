@@ -75,7 +75,6 @@ export default function Dashboard() {
     const product = useSelector((state) => state.product);
     const listPetAdoptionTransaction = useSelector((state) => state.listAdoptionTransaction)
 
-    const test= useSelector(state => console.log(state))
 
     useEffect(() => {
         dispatch(getAllAdmin());

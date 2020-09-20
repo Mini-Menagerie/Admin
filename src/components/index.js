@@ -1,4 +1,3 @@
-import { FiberPinRounded } from "@material-ui/icons";
 
 export { default as FormLogin } from "./Forms/Login";
 export { default as Header } from "./Header";
@@ -16,4 +15,5 @@ export {default as FormEditBreed} from './Forms/Breed/EditBreed';
 export { default as FormAddProduct } from './Forms/Products/addProduct';
 export { default as FormEditProduct } from './Forms/Products/editProduct';
 export { default as FormEditItemProduct } from './Forms/Products/editItemProduct';
+export { default as FormCreateAdoptionTransaction } from './Forms/AdoptionTransaction/AddAdoptionTransaction';
 

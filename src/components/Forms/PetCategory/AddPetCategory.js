@@ -1,12 +1,11 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-import { Container, Grid, Button, InputLabel, Select, FormControl } from "@material-ui/core";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Container, Grid, Button } from "@material-ui/core";
+import { Formik, Form, Field } from "formik";
 import { useDispatch } from "react-redux";
 import { addPetCategory } from '../../../redux/actions';
 import { useHistory } from "react-router-dom";
-import jwtDecode from "jwt-decode";
 
 const useStyles = makeStyles((theme) => ({
     root: {

@@ -1,12 +1,10 @@
 // import React, { useEffect } from "react";
 import React, {useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
 import { Container, Grid, Button,FormControl } from "@material-ui/core";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useLocation, useHistory } from "react-router-dom";
-import { Formik, Form, Field, ErrorMessage} from "formik";
-import { updateProduct, addImage } from "../../../redux/actions";
+import { addImage } from "../../../redux/actions";
 import ReactFilestack from "filestack-react";
 const filestackapi = "AugqfuGzTQouENQs5OOe2z";
 
@@ -26,7 +24,7 @@ export default function EditProduct() {
 
     const dispatch = useDispatch();
     const { pathname } = useLocation();
-    const product = useSelector((state) => state.Product);
+    // const product = useSelector((state) => state.Product);
     const history = useHistory();
 
     const id = pathname.split("/")[4];
@@ -38,12 +36,6 @@ export default function EditProduct() {
         idProduct: id,
         urlImage: ''
       });
-      const handleChange = (event) => {
-        setValues({
-          ...values,
-          [event.target.name]: event.target.value,
-        });
-      };
       const handleSubmit = (event) => {
         console.log(event);
         event.preventDefault();

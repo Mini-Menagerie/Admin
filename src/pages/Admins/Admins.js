@@ -16,9 +16,8 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import AddIcon from "@material-ui/icons/Add";
 import { Link } from "react-router-dom";
-import { getAllAdmin, deleteAdmin } from "../../redux/actions";
+import { getAllAdmin } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import jwtDecode from "jwt-decode";
 
 const useStyles = makeStyles((theme) => ({
     root: {
