@@ -86,13 +86,11 @@ export default function Transaction() {
           aria-label="nav tabs example"
         >
           {/* <LinkTab label="Adoption Transaction" href="/adoptionTransaction" {...a11yProps(0)} /> */}
-          <LinkTab label="Product Purchased" href="/productPurchased" {...a11yProps(1)} />
+          <LinkTab label="Product Purchased" href="/productPurchased" {...a11yProps(0)} />
         </Tabs>
       </AppBar>
-      {/* <TabPanel value={value} index={0}>
-        <AdoptionTransaction/>
-      </TabPanel> */}
-      <TabPanel value={value} index={1}>
+     
+      <TabPanel value={value} index={0}>
         <ProductPurchased />
       </TabPanel>
     </Box>

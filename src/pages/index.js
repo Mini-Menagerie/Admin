@@ -13,7 +13,7 @@ export { default as Breeds } from '../pages/Breed/Breed';
 export { default as EditBreed } from '../pages/Breed/EditBreed';
 export { default as CreateBreed } from '../pages/Breed/CreateBreed';
 export { default as Transaction } from '../pages/PaymentVerification/Transaction';
-export { default as ProductPurchased } from '../pages/PaymentVerification/Transaction';
+export { default as ProductPurchased } from '../pages/PaymentVerification/ProductPurchased';
 export { default as AdoptionTransaction } from '../pages/AdoptionTransaction/AdoptionTransaction';
 export { default as CreateAdoptionTransaction } from '../pages/AdoptionTransaction/CreateAdoptionTransaction';
 
