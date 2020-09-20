@@ -5,3 +5,4 @@ export * from './products';
 export * from './image';
 export * from './breed';
 export * from './payment';
+export * from './ListAdoptionTransaction';

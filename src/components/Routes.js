@@ -6,7 +6,7 @@ import { Dashboard, Admins, Login,
         CreateAdmin, EditAdmin, PetCategories, 
         CreatePetCategory, EditPetCategory, Product, EditProduct, AddProduct, Breeds,
         CreateBreed,
-        EditBreed, EditItemProduct 
+        EditBreed, EditItemProduct, AdoptionTransaction 
     } from "../pages";
 
 export default function Routes() {
@@ -58,6 +58,9 @@ export default function Routes() {
             </Route>
             <Route exact path="/dashboard/breeds/create">
                 <CreateBreed/>
+            </Route>
+            <Route exact path="/dashboard/petAdoptionTransaction">
+                <AdoptionTransaction/>
             </Route>
 
         </Switch>
