@@ -29,7 +29,8 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     margin: theme.spacing(1),
-    backgroundColor: "#d16473",
+    backgroundColor: "#3f51b5",
+    color: "white"
   },
   formControl: {
     margin: theme.spacing(1),

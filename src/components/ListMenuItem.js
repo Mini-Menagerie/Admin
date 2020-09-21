@@ -71,7 +71,7 @@ export default function ListMenuItem() {
 
                 <Grid>
                     {/* <Typography variant="h5">{loggedAdmin.fullname}</Typography> */}
-                    <Typography variant="h5">Test Admin</Typography>
+                    <Typography variant="h5">{loggedAdmin.email}</Typography>
                 </Grid>
             </ListItem>
             <Divider />
