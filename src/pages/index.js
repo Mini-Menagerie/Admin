@@ -19,5 +19,6 @@ export { default as CreateAdoptionTransaction } from '../pages/AdoptionTransacti
 export { default as CatCollection } from '../pages/PetCollection/CatCollection';
 export { default as DogCollection } from '../pages/PetCollection/DogCollection';
 export { default as Pets } from '../pages/PetCollection/Pets';
+export {default as AddPetCollection } from '../pages/PetCollection/AddPetCollection'; 
 
 
