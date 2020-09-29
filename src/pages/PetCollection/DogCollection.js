@@ -143,7 +143,7 @@ export default function DogCollection() {
                                     {index >= 0 &&
                                     <TableCell align="right">
                                         <Link
-                                            to={`/dashboard/breeds/edit/${row._id}`}
+                                            to={`/dashboard/petCollection/edit/${row.id}`}
                                             className={classes.link}
                                         >
                                             <Button
@@ -151,9 +151,8 @@ export default function DogCollection() {
                                                 color="secondary"
                                                 className={classes.button}
                                                 startIcon={<EditIcon />}
-                                                disabled
                                             >
-                                                Edit
+                                                Add to Collection
                                             </Button>
                                     </Link>
                                         
