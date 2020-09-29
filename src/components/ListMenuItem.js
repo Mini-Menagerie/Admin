@@ -131,6 +131,14 @@ export default function ListMenuItem() {
                 <ListItemText primary="Pet Adoption Transaction" />
               </ListItem>
             </Link>
+            <Link to="/dashboard/pets" className={classes.link}>
+              <ListItem button>
+                <ListItemIcon>
+                  <FormatListBulleted color="primary" />
+                </ListItemIcon>
+                <ListItemText primary="Pets" />
+              </ListItem>
+            </Link>
          
             {/* <Link to="/dashboard/events" className={classes.link}>
                 <ListItem button>

@@ -6,4 +6,7 @@ export * from './image';
 export * from './breed';
 export * from './productPurchased';
 export * from './ListAdoptionTransaction';
+export * from './Cats';
+export * from './Dogs';
+
 
