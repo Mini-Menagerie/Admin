@@ -20,11 +20,11 @@ import { FavoriteBorder, FormatListBulleted, ShoppingCart } from "@material-ui/i
 
 const useStyles = makeStyles((theme) => ({
   text: {
-    color: "#e04349",
+    color: "#FFF",
   },
   link: {
     textDecoration: "none",
-    color: "#062031",
+    color: "#FFF",
   },
   profile: {
     display: "flex",
