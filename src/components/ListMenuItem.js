@@ -12,6 +12,7 @@ import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 import { Link } from "react-router-dom";
 import { Grid, Box } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
+import { lightBlue, blue } from '@material-ui/core/colors';
 
 import Divider from "@material-ui/core/Divider";
 
@@ -20,11 +21,11 @@ import { FavoriteBorder, FormatListBulleted, ShoppingCart } from "@material-ui/i
 
 const useStyles = makeStyles((theme) => ({
   text: {
-    color: "#e04349",
+    color: "#FFF",
   },
   link: {
     textDecoration: "none",
-    color: "#062031",
+    color: "#FFF",
   },
   profile: {
     display: "flex",
@@ -78,7 +79,7 @@ export default function ListMenuItem() {
             <Link to="/dashboard/dashboard" className={classes.link}>
                 <ListItem button >
                     <ListItemIcon>
-                        <DashboardRoundedIcon color="primary" />
+                        <DashboardRoundedIcon style={{ color: lightBlue[800] }} />
                     </ListItemIcon>
                         <ListItemText primary="Dashboard"/>
                 </ListItem>
@@ -86,7 +87,7 @@ export default function ListMenuItem() {
             <Link to="/dashboard/admins" className={classes.link}>
                 <ListItem button>
                     <ListItemIcon>
-                        <DesktopMacRoundedIcon color="primary" />
+                        <DesktopMacRoundedIcon style={{ color: lightBlue[800] }} />
                     </ListItemIcon>
                         <ListItemText primary="Admin" />
                 </ListItem>
@@ -94,7 +95,7 @@ export default function ListMenuItem() {
             <Link to="/dashboard/product" className={classes.link}>
                 <ListItem button>
                     <ListItemIcon>
-                        <ShoppingCart color="primary" />
+                        <ShoppingCart style={{ color: lightBlue[800] }}/>
                     </ListItemIcon>
                         <ListItemText primary="Products" />
                  </ListItem>
@@ -102,7 +103,7 @@ export default function ListMenuItem() {
             <Link to="/dashboard/petCategory" className={classes.link}>
                 <ListItem button>
                     <ListItemIcon>
-                        <PetsRounded color="primary" />
+                        <PetsRounded style={{ color: lightBlue[800] }} />
                     </ListItemIcon>
                         <ListItemText primary="Pet Category" />
                 </ListItem>
@@ -110,7 +111,7 @@ export default function ListMenuItem() {
             <Link to="/dashboard/breeds" className={classes.link}>
                 <ListItem button>
                     <ListItemIcon>
-                        <FavoriteBorder color="primary" />
+                        <FavoriteBorder style={{ color: lightBlue[800] }} />
                     </ListItemIcon>
                         <ListItemText primary="Breeds" />
                 </ListItem>
@@ -118,7 +119,7 @@ export default function ListMenuItem() {
             <Link to="/dashboard/transaction" className={classes.link}>
                 <ListItem button>
                     <ListItemIcon>
-                        <AccountBalanceWalletIcon color="primary" />
+                        <AccountBalanceWalletIcon style={{ color: lightBlue[800] }} />
                     </ListItemIcon>
                         <ListItemText primary="Transaction" />
                 </ListItem>
@@ -126,7 +127,7 @@ export default function ListMenuItem() {
           <Link to="/dashboard/petAdoptionTransaction" className={classes.link}>
               <ListItem button>
                 <ListItemIcon>
-                  <FormatListBulleted color="primary" />
+                  <FormatListBulleted style={{ color: lightBlue[800] }} />
                 </ListItemIcon>
                 <ListItemText primary="Pet Adoption Transaction" />
               </ListItem>
@@ -134,7 +135,7 @@ export default function ListMenuItem() {
             <Link to="/dashboard/pets" className={classes.link}>
               <ListItem button>
                 <ListItemIcon>
-                  <FormatListBulleted color="primary" />
+                  <FormatListBulleted style={{ color: lightBlue[800] }} />
                 </ListItemIcon>
                 <ListItemText primary="Pets" />
               </ListItem>
