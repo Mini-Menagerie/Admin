@@ -62,7 +62,6 @@ export default function ProductPurchased() {
     const history = useHistory();
     const productPurchased = useSelector((state) => state.productPurchased);
     console.log(productPurchased);
-    let test = useSelector(state => console.log(state))
 
     useEffect(() => {
         dispatch(getAllProductPurchased());
@@ -71,7 +70,7 @@ export default function ProductPurchased() {
     return (
         <Fragment >
             <Box component={Paper} className={classes.root}>
-                <TableContainer aria-label='a dense table' size='small'>
+                <TableContainer aria-label='a dense table' size='medium'>
                    <TableHead className={classes.text}>
                       <TableRow>
                          <TableCell>
@@ -80,24 +79,22 @@ export default function ProductPurchased() {
                          <TableCell align='left'>
                            <Typography className={classes.text} variant='h6'>Id Transaction</Typography>
                          </TableCell>
+                         <TableCell align='center'>
+                           <Typography className={classes.text} variant='h6'>Product Name</Typography>
+                         </TableCell>
                          <TableCell align='left'>
                            <Typography className={classes.text} variant='h6'>Full Name</Typography>
                          </TableCell>
                          <TableCell align='left'>
                            <Typography className={classes.text} variant='h6'>Total Price</Typography>
                          </TableCell>
-                         <TableCell align='left'>
-                           <Typography className={classes.text} variant='h6'>Transaction Date</Typography>
-                         </TableCell>
-                         <TableCell align='left'>
-                           <Typography className={classes.text} variant='h6'>Payment Slip</Typography>
-                         </TableCell>
-                         <TableCell align='left'>
+                          <TableCell align='left'>
                            <Typography className={classes.text} variant='h6'>Status</Typography>
                          </TableCell>
-                         <TableCell align='left'>
-                           <Typography className={classes.text} variant='h6'>Action Button</Typography>
-                         </TableCell>                         
+                         <TableCell align='center'>
+                           <Typography className={classes.text} variant='h6'>Action</Typography>
+                         </TableCell>
+                         
                       </TableRow>
                    </TableHead>
                    <TableBody>
@@ -109,29 +106,30 @@ export default function ProductPurchased() {
                                         <Typography variant="h6">{index+1}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.idTransaction}</Typography>
+                                        <Typography variant="h6">{row.idTransaction._id}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.fullName}</Typography>
+                                        <Typography variant="h6">{row.idProduct[0].productName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.totalPrice}</Typography>
+                                        <Typography variant="h6">{row.idTransaction.idUser.fullName}</Typography>
                                     </TableCell>
-                                    {/* <TableCell align="center">
-                                        <Typography variant="h6">{row.transactionDate}</Typography>
-                                    </TableCell> */}
+                                    <TableCell align="center">
+                                        <Typography variant="h6">{row.idTransaction.totalPrice}</Typography>
+                                    </TableCell>
+                                    <TableCell align="center">
+                                        <Typography variant="h6">Completed</Typography>
+                                    </TableCell>
                                     {/* <TableCell align="center">
                                         <Typography variant="h6">{row.paymentSlip}</Typography>
                                     </TableCell> */}
-                                    <TableCell align="center">
-                                        <Typography variant="h6">{row.status}</Typography>
-                                    </TableCell>
+                                   
                                     <TableCell align="left">
                                     {index >= 0 &&
-                                    <TableCell align="center">  
+                                    <TableCell align="right">  
 
 
-                                        <Button
+                                        {/* <Button
                                             variant="contained"
                                             color="secondary"
                                             className={classes.button}
@@ -141,18 +139,20 @@ export default function ProductPurchased() {
                                             }
                                         >
                                             Accept
-                                        </Button>
+                                        </Button> */}
 
                                         <Button
                                             variant="contained"
                                             color="secondary"
+                                            disabled
                                             className={classes.button}
                                             startIcon={<SentimentDissatisfied />}
                                             onClick={() =>
-                                                dispatch(declineProductPurchased("Decline", row._id))
+                                                null
+                                                // dispatch(declineProductPurchased("Decline", row._id))
                                             }
                                         >
-                                            Decline
+                                            Delete
                                         </Button>
                                     
                                     </TableCell>
