@@ -1,7 +1,7 @@
 import axios from '../../helpers/axios';
 
 export const getAllProductPurchased= () => async (dispatch) => {
-    let result = await axios.get('/productPurchased')
+    let result = await axios.get('/transactionDetails')
     console.log(result);
     await dispatch({
         type: "GET_ALL_PRODUCT_PURCHASED",
@@ -11,7 +11,7 @@ export const getAllProductPurchased= () => async (dispatch) => {
 
 export const addOneProductPurchased = (values, history) => async(dispatch) => {
     try {
-        let result = await axios.post('/productPurchased/create', values)
+        let result = await axios.post('/transactionDetails/create', values)
         console.log(result);
         if(result.status === 200){
             await dispatch({
@@ -28,7 +28,7 @@ export const addOneProductPurchased = (values, history) => async(dispatch) => {
 
 export const getOneProductPurchased = (values, id, history) => async (dispatch) => {
     try {
-        let result = await axios.get(`/productPurchased/${id}`, values)
+        let result = await axios.get(`/listProductTransaction/${id}`, values)
         console.log(result);
         if(result.status === 200){
             await dispatch({
@@ -45,7 +45,7 @@ export const getOneProductPurchased = (values, id, history) => async (dispatch) 
 
 export const updateOneProductPurchased = (values, id, history) => async (dispatch) => {
     try {
-        let result = await axios.put(`/productPurchased/${id}`, values)
+        let result = await axios.put(`/listProductTransaction/${id}`, values)
         console.log(result);
         if(result.status === 200){
             await dispatch({
@@ -62,7 +62,7 @@ export const updateOneProductPurchased = (values, id, history) => async (dispatc
 
 export const deleteProductPurchased = (values, id, history) => async (dispatch) => {
     try{
-        let result = await axios.delete(`/productPurchased/${id}`, values)
+        let result = await axios.delete(`/listProductTransaction/${id}`, values)
         console.log(result);
         if(result.status === 200){
             await dispatch({
@@ -80,7 +80,7 @@ export const deleteProductPurchased = (values, id, history) => async (dispatch) 
 }
 export const acceptProductPurchased = (status, id) => async (dispatch) => {
     try{
-        let result = await axios.put(`/productPurchased/${id}`, {status: status})
+        let result = await axios.put(`/listProductTransaction/${id}`, {status: status})
         console.log(result);
         if(result.status === 200){
             await dispatch({
@@ -97,7 +97,7 @@ export const acceptProductPurchased = (status, id) => async (dispatch) => {
 
 export const declineProductPurchased = (status, id) => async (dispatch) => {
     try{
-        let result = await axios.put(`/productPurchased/${id}`, {status: status})
+        let result = await axios.put(`/listProductTransaction/${id}`, {status: status})
         console.log(result);
         if(result.status === 200){
             await dispatch({
