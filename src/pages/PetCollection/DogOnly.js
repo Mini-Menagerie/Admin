@@ -6,10 +6,10 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import CatCollection from './CatCollection';
-import DogCollection from './DogCollection';
-import { CatOnly, DogOnly } from '..';
-
+import SmallDog from './SmallDog';
+import MediumDog from './MediumDog';
+import BigDog from './BigDog';
+import UnregisteredDog from './UnregisteredDog';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -88,16 +88,24 @@ export default function Transaction() {
           aria-label="nav tabs example"
         >
           {/* <LinkTab label="Adoption Transaction" href="/adoptionTransaction" {...a11yProps(0)} /> */}
-          <LinkTab label="Cat Collections" href="/pets/cat-collections" {...a11yProps(0)} />
-          <LinkTab label="Dog Collections" href="/pets/dog-collections" {...a11yProps(1)} />
+          <LinkTab label="Small Dogs" href="/pets/dog-small" {...a11yProps(0)} />
+          <LinkTab label="Medium Dogs" href="/pets/dog-medium" {...a11yProps(1)} />
+          <LinkTab label="Big Dogs" href="/pets/dog-big" {...a11yProps(2)} />
+          <LinkTab label="Unregistered Dogs" href="/pets/dog-unregistered" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
      
       <TabPanel value={value} index={0}>
-        <CatOnly />
+        <SmallDog />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <DogOnly />
+        <MediumDog />
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        <BigDog />
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        <UnregisteredDog />
       </TabPanel>
     </Box>
   );

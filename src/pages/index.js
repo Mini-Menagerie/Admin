@@ -20,5 +20,8 @@ export { default as CatCollection } from '../pages/PetCollection/CatCollection';
 export { default as DogCollection } from '../pages/PetCollection/DogCollection';
 export { default as Pets } from '../pages/PetCollection/Pets';
 export {default as AddPetCollection } from '../pages/PetCollection/AddPetCollection'; 
+export { default as DogOnly} from '../pages/PetCollection/DogOnly';
+export { default as CatOnly} from '../pages/PetCollection/CatOnly';
+
 
 
