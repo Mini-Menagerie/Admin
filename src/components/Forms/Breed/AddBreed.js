@@ -2,12 +2,10 @@ import React, {useEffect, useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import { Container, Grid, Button, InputLabel, Select, FormControl } from "@material-ui/core";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useDispatch,useSelector } from "react-redux";
+import { Formik, Form, Field } from "formik";
+import { useDispatch } from "react-redux";
 import { addBreed, getAllCategoryPet } from '../../../redux/actions';
 import { useHistory } from "react-router-dom";
-import jwtDecode from "jwt-decode";
-import petCategory from "../../../redux/reducers/petCategory";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -27,12 +25,12 @@ export default function AddBreed() {
     const classes = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
-    const categoryPet = useSelector(state => state.petCategory)
 
     let [category, setCategory] = useState([
         {_id: "5f636c3107ecf0153f55cfca", categoryName: 'Cat'},
         {_id: "5f64485746168f24214a72a5", categoryName: 'Dog'},
     ])
+    console.log(setCategory);
     
     useEffect(() => {
         dispatch(getAllCategoryPet());

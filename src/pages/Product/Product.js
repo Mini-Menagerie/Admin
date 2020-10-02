@@ -19,11 +19,10 @@ import { CardMedia } from '@material-ui/core';
 import { Link } from "react-router-dom";
 import { getAllAdmin, getAllProducts, deleteProduct, updateProduct, getAllImage } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import jwtDecode from "jwt-decode";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: '80%',
+        width: '90%',
         margin: 'auto',
         boxShadow: '0 0.7rem 1rem rgba(111, 115, 184, 0.8) !important',
         backgroundColor: '#3a6986',
@@ -57,9 +56,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Product() {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const admins = useSelector((state) => state.admin);
     const product = useSelector((state) => state.product);
-    const urlImage = useSelector((state) => state.image);
     console.log(product)
     // console.log(urlImage)
 

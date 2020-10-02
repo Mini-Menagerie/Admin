@@ -12,14 +12,10 @@ import Container from "@material-ui/core/Container";
 import { Box } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import DeleteIcon from "@material-ui/icons/Delete";
-import EditIcon from "@material-ui/icons/Edit";
 import AddIcon from "@material-ui/icons/Add";
-import { CardMedia } from '@material-ui/core';
 import { Link } from "react-router-dom";
 import { acceptAdoptionTransaction, getAllListAdoptionTransaction, declineAdoptionTransaction } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import {useHistory} from 'react-router-dom'
 import { Send, SentimentDissatisfied } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
@@ -58,7 +54,6 @@ const useStyles = makeStyles((theme) => ({
 export default function AdoptionTransaction() {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const history = useHistory();
     const adoptionTransaction = useSelector((state) => state.listAdoptionTransaction);
     console.log(adoptionTransaction);
 
@@ -82,10 +77,11 @@ export default function AdoptionTransaction() {
                         <Grid>
                             
                             <Link
-                                to="/dashboard/adoptionTransaction/add"
+                                to="/dashboard/petAdoptionTransaction/add"
                                 className={classes.link}
                             >
                                 <Button
+                                    disabled
                                     variant="contained"
                                     color="secondary"
                                     className={classes.button}

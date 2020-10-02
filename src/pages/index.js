@@ -12,5 +12,13 @@ export { default as EditPetCategory} from '../pages/PetCategories/EditPetCategor
 export { default as Breeds } from '../pages/Breed/Breed';
 export { default as EditBreed } from '../pages/Breed/EditBreed';
 export { default as CreateBreed } from '../pages/Breed/CreateBreed';
+export { default as Transaction } from '../pages/PaymentVerification/Transaction';
+export { default as ProductPurchased } from '../pages/PaymentVerification/ProductPurchased';
 export { default as AdoptionTransaction } from '../pages/AdoptionTransaction/AdoptionTransaction';
+export { default as CreateAdoptionTransaction } from '../pages/AdoptionTransaction/CreateAdoptionTransaction';
+export { default as CatCollection } from '../pages/PetCollection/CatCollection';
+export { default as DogCollection } from '../pages/PetCollection/DogCollection';
+export { default as Pets } from '../pages/PetCollection/Pets';
+export {default as AddPetCollection } from '../pages/PetCollection/AddPetCollection'; 
+
 

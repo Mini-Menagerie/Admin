@@ -3,12 +3,11 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import { Container, Grid, Button } from "@material-ui/core";
-import { useDispatch, useSelector } from "react-redux";
 // import { useDispatch } from "react-redux";
-import { useLocation, useHistory } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 // import { getAdminByID } from "../../redux/actions";
 import { Formik, Form, Field, ErrorMessage} from "formik";
-import { updateAdmin } from "../../redux/actions";
+// import { updateAdmin } from "../../redux/actions";
 
 const useStyles = makeStyles((theme) => ({
     field: {
@@ -35,18 +34,14 @@ export default function EditAdmin() {
         );
     };
 
-    const dispatch = useDispatch();
-    const { pathname } = useLocation();
+    // const dispatch = useDispatch();
+    // const { pathname } = useLocation();
     // const admins = useSelector((state) => state.admin);
-    const history = useHistory();
+    // const history = useHistory();
 
-    // console.log(admins, 'ssss')
+    
 
-    const id = pathname.split("/")[4];
-
-    // useEffect(() => {
-    //     dispatch(getAdminByID(id));
-    // }, [dispatch, id]);
+    // const id = pathname.split("/")[4];
 
     return (
         <Container>

@@ -5,11 +5,11 @@ import {
   Container,
   Grid,
   Button,
-  InputLabel,
   Select,
+  InputLabel,
+  MenuItem,
   FormControl,
 } from "@material-ui/core";
-import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../../redux/actions";
 import { useHistory } from "react-router-dom";
@@ -29,8 +29,13 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     margin: theme.spacing(1),
-    backgroundColor: '#d16473'
-},
+    backgroundColor: "#3f51b5",
+    color: "white"
+  },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
 }));
 
 export default function AddProduct() {
@@ -38,6 +43,7 @@ export default function AddProduct() {
   const dispatch = useDispatch();
   const history = useHistory();
 
+  const [open, setOpen] = React.useState(false);
   let [values, setValues] = useState({
     productName: "",
     categories: "",
@@ -48,6 +54,18 @@ export default function AddProduct() {
       image: "",
     },
   });
+
+  const handleChangeSelect = (event) => {
+    setValues({values, ...event.target.value});
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
   const handleChange = (event) => {
     setValues({
       ...values,
@@ -70,19 +88,40 @@ export default function AddProduct() {
           alignItems="center"
           spacing={2}
         >
-            <TextField
-              fullWidth
-              variant="outlined"
-              margin="normal"
-              className={classes.field}
-              id="standard-full-width"
-              label="Product Name"
-              name="productName"
-              value={values.productName}
-              onChange={handleChange}
-            />
-
           <TextField
+            fullWidth
+            variant="outlined"
+            margin="normal"
+            className={classes.field}
+            id="standard-full-width"
+            label="Product Name"
+            name="productName"
+            value={values.productName}
+            onChange={handleChange}
+          />
+        <FormControl className={classes.formControl} onSubmit={handleSubmit}>
+          <InputLabel id="demo-controlled-open-select-label">Categories</InputLabel>
+          <Select
+            labelId="demo-controlled-open-select-label"
+            id="demo-controlled-open-select"
+            open={open}
+            onClose={handleClose}
+            onOpen={handleOpen}
+            value={values.categories}
+            onChange={handleChange}
+            name="categories"
+          >
+            <MenuItem value="">
+              <em></em>
+            </MenuItem>
+            <MenuItem value="catfood">Cat Food</MenuItem>
+            <MenuItem value="dogfood">Dog Food</MenuItem>
+            <MenuItem value="acc">Acc</MenuItem>
+            <MenuItem value="vitdrug">Vitdrugs</MenuItem>
+          </Select>
+          </FormControl>
+
+          {/* <TextField
             fullWidth
             variant="outlined"
             margin="normal"
@@ -92,7 +131,7 @@ export default function AddProduct() {
             name="categories"
             value={values.categories}
             onChange={handleChange}
-          />
+          /> */}
 
           <TextField
             fullWidth
@@ -129,8 +168,13 @@ export default function AddProduct() {
               });
             }}
           />
-        <br/>
-          <Button className={classes.button} variant="outlined" color="primary" onClick={handleSubmit}>
+          <br />
+          <Button
+            className={classes.button}
+            variant="outlined"
+            color="primary"
+            onClick={handleSubmit}
+          >
             Submit
           </Button>
         </Grid>

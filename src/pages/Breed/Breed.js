@@ -18,7 +18,6 @@ import AddIcon from "@material-ui/icons/Add";
 import { Link } from "react-router-dom";
 import {getAllBreed, deleteBreed  } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import jwtDecode from "jwt-decode";
 
 const useStyles = makeStyles((theme) => ({
     root: {

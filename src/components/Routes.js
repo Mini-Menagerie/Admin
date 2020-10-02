@@ -3,11 +3,13 @@ import { Switch, Route } from "react-router-dom";
 
 
 import { Dashboard, Admins, Login, 
-        CreateAdmin, EditAdmin, PetCategories, 
+        CreateAdmin, PetCategories, 
         CreatePetCategory, EditPetCategory, Product, EditProduct, AddProduct, Breeds,
-        CreateBreed,
-        EditBreed, EditItemProduct, AdoptionTransaction 
+        CreateBreed, EditBreed,
+        Transaction, ProductPurchased, AdoptionTransaction, EditItemProduct, CreateAdoptionTransaction, 
+        CatCollection, Pets, DogCollection, AddPetCollection
     } from "../pages";
+
 
 export default function Routes() {
     return (
@@ -56,11 +58,34 @@ export default function Routes() {
             <Route exact path="/dashboard/breeds/edit/:id">
                 <EditBreed/>
             </Route>
+            <Route exact path="/dashboard/petCollection/edit/:id">
+                <AddPetCollection/>
+            </Route>
+            /dashboard/petCollection/edit
             <Route exact path="/dashboard/breeds/create">
                 <CreateBreed/>
             </Route>
-            <Route exact path="/dashboard/petAdoptionTransaction">
+
+            <Route exact path="/dashboard/transaction">
+                <Transaction/>
+            </Route>
+            <Route exact path="/dashboard/transaction/productPurchased">
+                <ProductPurchased/>
+            </Route>
+            <Route exact path="/dashboard/petAdoptionTransaction/">
                 <AdoptionTransaction/>
+            </Route>
+             <Route exact path="/dashboard/petAdoptionTransaction/add">
+                <CreateAdoptionTransaction/>
+            </Route>
+            <Route exact path="/dashboard/pets">
+                <Pets/>
+            </Route>
+            <Route exact path="/dashboard/pets/cat-collections">
+                <CatCollection/>
+            </Route>
+            <Route exact path="/dashboard/pets/dog-collections">
+                <DogCollection/>
             </Route>
 
         </Switch>
