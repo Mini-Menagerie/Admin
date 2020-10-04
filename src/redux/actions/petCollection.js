@@ -2,7 +2,6 @@ import axios from '../../helpers/axios';
 
 export const getAllPetCollection = () => async (dispatch) => {
     let result = await axios.get('/petCollection')
-    console.log(result);
 
     await dispatch({
         type: "GET_ALL_PET_COLLECTION",
@@ -12,7 +11,7 @@ export const getAllPetCollection = () => async (dispatch) => {
 
 export const addPetCollection = (values, history) => async (dispatch) => {
     let result = await axios.post('/petCollection/create', values)
-    console.log(result);
+
     if(result.status === 200){
         alert('success to add this Pet to Pet Collection')
         await dispatch({
@@ -26,7 +25,7 @@ export const addPetCollection = (values, history) => async (dispatch) => {
 
 export const updatePetCollection = (values, id, history) => async (dispatch) => {
     let result = await axios.put(`/petCollection/${id}`, values)
-    console.log(result);
+    
     if(result.status === 200){
         await dispatch({
             type: "UPDATE_ONE_PET_COLLECTION",

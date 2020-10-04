@@ -1,14 +1,16 @@
-// import React, { useEffect } from "react";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import { Container, Grid, Button } from "@material-ui/core";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import { addCollection } from "../../../redux/actions";
 import { useDispatch } from "react-redux";
-import { useLocation, useHistory } from "react-router-dom";
-import { Formik, Form, Field } from "formik";
-import { addPetCollection } from "../../redux/actions";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
+    root: {
+        boxShadow: "0 0.7rem 1rem rgba(111, 115, 184, 0.8) !important",
+    },
     field: {
         width: "100%",
     },
@@ -18,8 +20,10 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function FormAddPetCollection() {
+export default function AddAdmin() {
     const classes = useStyles();
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     const CustomField = (props) => {
         return (
@@ -28,34 +32,31 @@ export default function FormAddPetCollection() {
                 variant="outlined"
                 margin="normal"
                 className={classes.field}
+                required
                 {...props}
             />
         );
     };
-
-    const dispatch = useDispatch();
-    const { pathname } = useLocation();
-    // const breeds = useSelector((state) => state.breed);
-    const history = useHistory();
-
-    // useEffect(() => {
-    //     dispatch(getAdminByID(id));
-    // }, [dispatch, id]);
 
     return (
         <Container>
             <Formik
                 initialValues={{
                     collectionName: "",
-                    idPet: pathname.split("/")[4],
                 }}
-                enableReinitialize={true}
+                validate={(values) => {
+                    const errors = {};
+                    if (!values.collectionName) {
+                        errors.collectionName = "Required";
+                    }
+                    return errors;
+                }}
                 onSubmit={(values) => {
-                    dispatch(addPetCollection(values, history));
+                    dispatch(addCollection(values, history));
                 }}
             >
                 {() => (
-                    <Form className={classes.form}>
+                    <Form noValidate autoComplete="off">
                         <Grid
                             container
                             justify="center"
@@ -63,17 +64,20 @@ export default function FormAddPetCollection() {
                             alignItems="center"
                             spacing={2}
                         >
-                            <Grid container item xs={12} md={6} lg={6}>
+                            <Grid container>
                                 <Field
                                     type="text"
                                     as={CustomField}
                                     name="collectionName"
                                     label="Collection Name"
-                                    required
                                     autoFocus
                                 />
+                                <ErrorMessage
+                                    name="collectionName"
+                                    component="div"
+                                    className={classes.error}
+                                />
                             </Grid>
-
                             <Grid container item xs={12} md={6} lg={6}>
                                 <Button
                                     type="submit"
@@ -82,7 +86,7 @@ export default function FormAddPetCollection() {
                                     color="primary"
                                     className={classes.submit}
                                 >
-                                    Add Pet to Collection
+                                    Submit
                                 </Button>
                             </Grid>
                         </Grid>
