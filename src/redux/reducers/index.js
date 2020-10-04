@@ -12,6 +12,7 @@ import cats from "./Cats";
 import dogs from "./Dogs";
 import petCollection from "./petCollection";
 import collection from "./collection";
+import pet from "./pet";
 
 export default combineReducers({
     admin,
@@ -26,4 +27,5 @@ export default combineReducers({
     dogs,
     petCollection,
     collection,
+    pet,
 });
