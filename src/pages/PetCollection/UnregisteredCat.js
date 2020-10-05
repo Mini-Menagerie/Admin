@@ -51,8 +51,8 @@ const useStyles = makeStyles((theme) => ({
 export default function UnregisteredCat() {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const dogs = useSelector((state) => state.dogs);
-    console.log(dogs);
+    const cats = useSelector((state) => state.cats);
+    console.log(cats);
 
     useEffect(() => {
         dispatch(getAllCats());
@@ -118,8 +118,8 @@ export default function UnregisteredCat() {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {Array.isArray(dogs) &&
-                            dogs.sort().map((row, index) => (
+                            {Array.isArray(cats) &&
+                            cats.sort().map((row, index) => (
                                 
                                 <TableRow key={row._id}>
                                     <TableCell component="th" scope="row">
