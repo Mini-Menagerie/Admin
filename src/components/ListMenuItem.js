@@ -8,67 +8,63 @@ import Superadmin from "./assets/superadmin.jpg";
 import DashboardRoundedIcon from "@material-ui/icons/DashboardRounded";
 import DesktopMacRoundedIcon from "@material-ui/icons/DesktopMacRounded";
 import PetsRounded from "@material-ui/icons/PetsRounded";
-import AccountBalanceWalletIcon from "@material-ui/icons/AccountBalanceWallet";
+import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 import { Link } from "react-router-dom";
 import { Grid, Box } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
-import { lightBlue } from "@material-ui/core/colors";
+import { lightBlue, blue } from '@material-ui/core/colors';
 
 import Divider from "@material-ui/core/Divider";
 
 import jwtDecode from "jwt-decode";
-import {
-    FavoriteBorder,
-    FormatListBulleted,
-    ShoppingCart,
-    LibraryAdd,
-} from "@material-ui/icons";
+import { FavoriteBorder, FormatListBulleted, ShoppingCart } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
-    text: {
-        color: "#FFF",
+  text: {
+    color: "#FFF",
+  },
+  link: {
+    textDecoration: "none",
+    color: "#FFF",
+  },
+  profile: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  avatar: {
+    margin: "auto",
+    padding: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+    "& img, & svg,": {
+      width: "12vh",
+      height: "12vh",
+      padding: theme.spacing(2),
+      backgroundColor: "white",
+      border: "2px solid #e04349",
     },
-    link: {
-        textDecoration: "none",
-        color: "#FFF",
-    },
-    profile: {
-        display: "flex",
-        flexDirection: "column",
-    },
-    avatar: {
-        margin: "auto",
-        padding: theme.spacing(2),
-        marginBottom: theme.spacing(2),
-        "& img, & svg,": {
-            width: "12vh",
-            height: "12vh",
-            padding: theme.spacing(2),
-            backgroundColor: "white",
-            border: "2px solid #e04349",
-        },
-    },
-    icon: {
-        paddingRight: theme.spacing(1),
-    },
+  },
+  icon: {
+    paddingRight: theme.spacing(1),
+  },
 }));
 
 export default function ListMenuItem() {
-    const classes = useStyles();
-    const loggedAdmin = jwtDecode(localStorage.getItem("menagerie"));
+  const classes = useStyles();
+  const loggedAdmin = jwtDecode(localStorage.getItem("menagerie"));
+  console.log(loggedAdmin.email);
 
-    // useEffect(() => {
-    //     dispatch(getAllEvents());
-    // }, [dispatch]);
+  // useEffect(() => {
+  //     dispatch(getAllEvents());
+  // }, [dispatch]);
 
-    return (
-        <Box className={classes.text}>
-            <ListItem className={classes.profile}>
-                <Avatar className={classes.avatar}>
-                    <img src={Superadmin} alt="" />
-                </Avatar>
+  return (
+    <Box className={classes.text}>
+      <ListItem className={classes.profile}>
+        <Avatar className={classes.avatar}>
+          <img src={Superadmin} alt="" />
+        </Avatar>
 
-                {/* { loggedAdmin.role==='admin' && 
+        {/* { loggedAdmin.role==='admin' && 
                 <Avatar className={classes.avatar} >
                     <img src={Admin} alt="" />
                 </Avatar>
@@ -81,39 +77,35 @@ export default function ListMenuItem() {
             </ListItem>
             <Divider />
             <Link to="/dashboard/dashboard" className={classes.link}>
-                <ListItem button>
+                <ListItem button >
                     <ListItemIcon>
-                        <DashboardRoundedIcon
-                            style={{ color: lightBlue[800] }}
-                        />
+                        <DashboardRoundedIcon style={{ color: lightBlue[800] }} />
                     </ListItemIcon>
-                    <ListItemText primary="Dashboard" />
+                        <ListItemText primary="Dashboard"/>
                 </ListItem>
             </Link>
             <Link to="/dashboard/admins" className={classes.link}>
                 <ListItem button>
                     <ListItemIcon>
-                        <DesktopMacRoundedIcon
-                            style={{ color: lightBlue[800] }}
-                        />
+                        <DesktopMacRoundedIcon style={{ color: lightBlue[800] }} />
                     </ListItemIcon>
-                    <ListItemText primary="Admin" />
+                        <ListItemText primary="Admin" />
                 </ListItem>
             </Link>
             <Link to="/dashboard/product" className={classes.link}>
                 <ListItem button>
                     <ListItemIcon>
-                        <ShoppingCart style={{ color: lightBlue[800] }} />
+                        <ShoppingCart style={{ color: lightBlue[800] }}/>
                     </ListItemIcon>
-                    <ListItemText primary="Products" />
-                </ListItem>
+                        <ListItemText primary="Products" />
+                 </ListItem>
             </Link>
             <Link to="/dashboard/petCategory" className={classes.link}>
                 <ListItem button>
                     <ListItemIcon>
                         <PetsRounded style={{ color: lightBlue[800] }} />
                     </ListItemIcon>
-                    <ListItemText primary="Pet Category" />
+                        <ListItemText primary="Pet Category" />
                 </ListItem>
             </Link>
             <Link to="/dashboard/breeds" className={classes.link}>
@@ -121,47 +113,34 @@ export default function ListMenuItem() {
                     <ListItemIcon>
                         <FavoriteBorder style={{ color: lightBlue[800] }} />
                     </ListItemIcon>
-                    <ListItemText primary="Breeds" />
+                        <ListItemText primary="Breeds" />
                 </ListItem>
             </Link>
             <Link to="/dashboard/transaction" className={classes.link}>
                 <ListItem button>
                     <ListItemIcon>
-                        <AccountBalanceWalletIcon
-                            style={{ color: lightBlue[800] }}
-                        />
+                        <AccountBalanceWalletIcon style={{ color: lightBlue[800] }} />
                     </ListItemIcon>
-                    <ListItemText primary="Transaction" />
+                        <ListItemText primary="Transaction" />
                 </ListItem>
             </Link>
-            <Link
-                to="/dashboard/petAdoptionTransaction"
-                className={classes.link}
-            >
-                <ListItem button>
-                    <ListItemIcon>
-                        <FormatListBulleted style={{ color: lightBlue[800] }} />
-                    </ListItemIcon>
-                    <ListItemText primary="Pet Adoption Transaction" />
-                </ListItem>
+          <Link to="/dashboard/petAdoptionTransaction" className={classes.link}>
+              <ListItem button>
+                <ListItemIcon>
+                  <FormatListBulleted style={{ color: lightBlue[800] }} />
+                </ListItemIcon>
+                <ListItemText primary="Pet Adoption Transaction" />
+              </ListItem>
             </Link>
             <Link to="/dashboard/pets" className={classes.link}>
-                <ListItem button>
-                    <ListItemIcon>
-                        <FormatListBulleted style={{ color: lightBlue[800] }} />
-                    </ListItemIcon>
-                    <ListItemText primary="Pets" />
-                </ListItem>
+              <ListItem button>
+                <ListItemIcon>
+                  <FormatListBulleted style={{ color: lightBlue[800] }} />
+                </ListItemIcon>
+                <ListItemText primary="Pets" />
+              </ListItem>
             </Link>
-            <Link to="/dashboard/collection" className={classes.link}>
-                <ListItem button>
-                    <ListItemIcon>
-                        <LibraryAdd style={{ color: lightBlue[800] }} />
-                    </ListItemIcon>
-                    <ListItemText primary="Collection" />
-                </ListItem>
-            </Link>
-
+         
             {/* <Link to="/dashboard/events" className={classes.link}>
                 <ListItem button>
                     <ListItemIcon>
@@ -175,6 +154,6 @@ export default function ListMenuItem() {
                         </Badge >
                 </ListItem>
             </Link> */}
-        </Box>
-    );
+    </Box>
+  );
 }
