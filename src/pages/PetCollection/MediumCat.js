@@ -16,7 +16,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import AddIcon from "@material-ui/icons/Add";
 import { Link } from "react-router-dom";
-import { getAllCats } from "../../redux/actions";
+import { getMediumCat } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
@@ -48,14 +48,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function Pet() {
+export default function MediumCat() {
     const classes = useStyles();
     const dispatch = useDispatch();
     const cats = useSelector((state) => state.cats);
     console.log(cats);
 
     useEffect(() => {
-        dispatch(getAllCats());
+        dispatch(getMediumCat());
     }, [dispatch]);
 
     return (
@@ -69,9 +69,9 @@ export default function Pet() {
                         alignItems="center"
                     >
                         <Grid>
-                            <Typography className={classes.tablehead} variant="h4">Unregistered Cats</Typography>
+                            <Typography className={classes.tablehead} variant="h4">Medium Cats Collections</Typography>
                         </Grid>
-                        <Grid>
+                        {/* <Grid>
                             
                             <Link
                                 to="/dashboard/breeds/create"
@@ -86,7 +86,7 @@ export default function Pet() {
                                     Add
                                 </Button>
                             </Link>
-                        </Grid>
+                        </Grid> */}
                     </Grid>
                 </Container>
 

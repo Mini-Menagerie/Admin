@@ -48,11 +48,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function Pet() {
+export default function UnregisteredCat() {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const cats = useSelector((state) => state.cats);
-    console.log(cats);
+    const dogs = useSelector((state) => state.dogs);
+    console.log(dogs);
 
     useEffect(() => {
         dispatch(getAllCats());
@@ -71,7 +71,7 @@ export default function Pet() {
                         <Grid>
                             <Typography className={classes.tablehead} variant="h4">Unregistered Cats</Typography>
                         </Grid>
-                        <Grid>
+                        {/* <Grid>
                             
                             <Link
                                 to="/dashboard/breeds/create"
@@ -86,7 +86,7 @@ export default function Pet() {
                                     Add
                                 </Button>
                             </Link>
-                        </Grid>
+                        </Grid> */}
                     </Grid>
                 </Container>
 
@@ -118,8 +118,8 @@ export default function Pet() {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {Array.isArray(cats) &&
-                            cats.sort().map((row, index) => (
+                            {Array.isArray(dogs) &&
+                            dogs.sort().map((row, index) => (
                                 
                                 <TableRow key={row._id}>
                                     <TableCell component="th" scope="row">

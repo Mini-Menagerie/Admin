@@ -69,7 +69,7 @@ export default function DogCollection() {
                         alignItems="center"
                     >
                         <Grid>
-                            <Typography className={classes.tablehead} variant="h4">Dog Collections</Typography>
+                            <Typography className={classes.tablehead} variant="h4">Unregistered Dogs</Typography>
                         </Grid>
                         <Grid>
                             
