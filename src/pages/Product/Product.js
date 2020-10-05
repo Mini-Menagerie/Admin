@@ -122,7 +122,7 @@ export default function Product() {
                                 <TableCell align="right" >
                                     <Typography className={classes.tablehead} variant="h6">Image</Typography>
                                 </TableCell>
-                                <TableCell align="right" >
+                                <TableCell align="center" >
                                     <Typography className={classes.tablehead} variant="h6">Action</Typography>
                                 </TableCell>
                             </TableRow>
@@ -135,7 +135,7 @@ export default function Product() {
                                     <TableCell component="th" scope="row">
                                         <Typography variant="h6">{index+1}</Typography>
                                     </TableCell>
-                                    <TableCell align="center">
+                                    <TableCell align="left">
                                         <Typography variant="h6">{row.productName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
@@ -165,10 +165,11 @@ export default function Product() {
                                             className={classes.link}
                                         >
                                             <Button
+                                                style={{width: '150px'}}
                                                 variant="contained"
                                                 color="secondary"
                                                 className={classes.button}
-                                                startIcon={<EditIcon />}
+                                                startIcon={<AddIcon />}
                                             >
                                                 Add Image
                                             </Button>
@@ -178,6 +179,7 @@ export default function Product() {
                                             className={classes.link}
                                         >
                                             <Button
+                                                style={{width: '150px'}}
                                                 variant="contained"
                                                 color="secondary"
                                                 className={classes.button}
@@ -189,6 +191,7 @@ export default function Product() {
 
 
                                         <Button
+                                            style={{width: '150px'}}
                                             variant="contained"
                                             color="secondary"
                                             className={classes.button}
