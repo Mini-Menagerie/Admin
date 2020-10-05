@@ -4899,9 +4899,15 @@ form-data@~2.3.2:
     mime-types "^2.1.12"
 
 formik@^2.1.5:
+<<<<<<< HEAD
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/formik/-/formik-2.1.5.tgz#de5bbbe35543fa6d049fe96b8ee329d6cd6892b8"
   integrity sha512-bWpo3PiqVDYslvrRjTq0Isrm0mFXHiO33D8MS6t6dWcqSFGeYF52nlpCM2xwOJ6tRVRznDkL+zz/iHPL4LDuvQ==
+=======
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/formik/-/formik-2.1.6.tgz#f723bfccb2c7abec886aa6a4930b360d20f1a0b3"
+  integrity sha512-m9DcxlZw/58p4xuhH3dzUzQWaC4dig0RKX7yNQOJt4VRhXn7p+YRrs3o17r3YwzvOLua3zC53VMbfupLsDwO5w==
+>>>>>>> 265dc4c33b815ec45ca7055235d73824dfd4ee28
   dependencies:
     deepmerge "^2.1.1"
     hoist-non-react-statics "^3.3.0"
@@ -6589,9 +6595,15 @@ jsonify@~0.0.0:
   integrity sha1-LHS27kHZPKUbe1qu6PUDYx0lKnM=
 
 jsonschema@^1.2.5:
+<<<<<<< HEAD
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/jsonschema/-/jsonschema-1.2.6.tgz#52b0a8e9dc06bbae7295249d03e4b9faee8a0c0b"
   integrity sha512-SqhURKZG07JyKKeo/ir24QnS4/BV7a6gQy93bUSe4lUdNp0QNpIz2c9elWJQ9dpc5cQYY6cvCzgRwy0MQCLyqA==
+=======
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/jsonschema/-/jsonschema-1.2.7.tgz#4e6d6dc4d83dc80707055ba22c00ec6152c0e6e9"
+  integrity sha512-3dFMg9hmI9LdHag/BRIhMefCfbq1hicvYMy8YhZQorAdzOzWz7NjniSpn39yjpzUAMIWtGyyZuH2KNBloH7ZLw==
+>>>>>>> 265dc4c33b815ec45ca7055235d73824dfd4ee28
 
 jsprim@^1.2.2:
   version "1.4.1"
@@ -6682,9 +6694,15 @@ jsx-ast-utils@^2.2.1, jsx-ast-utils@^2.2.3:
     object.assign "^4.1.0"
 
 jwt-decode@^3.0.0-beta.2:
+<<<<<<< HEAD
   version "3.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-3.0.0-beta.2.tgz#5d928dd0d582caab47b252a5f12ad1721f2f6eef"
   integrity sha512-AnENY5syz7PzgpTzos9sxkqKTmHU0JeJOXZFHUc41bDyybC2yzZ+1r43ZLhk7+JCwF0yjISPuVK9ZWfA1nCUPA==
+=======
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-3.0.0.tgz#d9a17ddf6d37c03bf037b0b27cf8756cfd01c5c7"
+  integrity sha512-RBQv2MTm3FNKQkdzhEyQwh5MbdNgMa+FyIJIK5RMWEn6hRgRHr7j55cRxGhRe6vGJDElyi6f6u/yfkP7AoXddA==
+>>>>>>> 265dc4c33b815ec45ca7055235d73824dfd4ee28
 
 killable@^1.0.1:
   version "1.0.1"
@@ -7229,9 +7247,15 @@ mkdirp@^0.5.5:
     minimist "^1.2.5"
 
 moment@^2.28.0:
+<<<<<<< HEAD
   version "2.28.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.28.0.tgz#cdfe73ce01327cee6537b0fafac2e0f21a237d75"
   integrity sha512-Z5KOjYmnHyd/ukynmFd/WwyXHd7L4J9vTI/nn5Ap9AVUgaAE15VvQ9MOGmJJygEUklupqIrFnor/tjTwRU+tQw==
+=======
+  version "2.29.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.0.tgz#fcbef955844d91deb55438613ddcec56e86a3425"
+  integrity sha512-z6IJ5HXYiuxvFTI6eiQ9dm77uE0gyy1yXNApVHqTcnIKfY9tIwEjlzsZ6u1LQXvVgKeTnv9Xm7NDvJ7lso3MtA==
+>>>>>>> 265dc4c33b815ec45ca7055235d73824dfd4ee28
 
 move-concurrently@^1.0.1:
   version "1.0.1"
@@ -10393,9 +10417,15 @@ svgo@^1.0.0, svgo@^1.2.2:
     util.promisify "~1.0.0"
 
 sweetalert2@^10.0.2:
+<<<<<<< HEAD
   version "10.3.1"
   resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-10.3.1.tgz#a2c051ab3a3b603273e69c613c58ed42cc35780f"
   integrity sha512-4pUSfX3+Lu4rxWwxc+otgTyhXn3G/ZWk1USKZM94ZC1cV4zg9fLvHLpEeoToZnsWifUIsdvhDt94Kv8NB8ySMA==
+=======
+  version "10.3.5"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-10.3.5.tgz#e5a10ad789163e85ec6031a413b08b20e5aae0a4"
+  integrity sha512-8XBQvW2frWVn0Xs80qyraRXcb3Mg/aKG+9sdVPlzViDIYJfLhMeda3pRuyGzyvrPXbBQ3KRjs+66xKH3kz8/og==
+>>>>>>> 265dc4c33b815ec45ca7055235d73824dfd4ee28
 
 symbol-observable@^1.2.0:
   version "1.2.0"
