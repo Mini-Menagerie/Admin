@@ -55,9 +55,9 @@ export default function AddProduct() {
     },
   });
 
-  const handleChangeSelect = (event) => {
-    setValues({values, ...event.target.value});
-  };
+  // const handleChangeSelect = (event) => {
+  //   setValues({values, ...event.target.value});
+  // };
   const handleClose = () => {
     setOpen(false);
   };
