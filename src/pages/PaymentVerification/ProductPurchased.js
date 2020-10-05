@@ -76,19 +76,19 @@ export default function ProductPurchased() {
                          <TableCell>
                            <Typography className={classes.text} variant='h6'>No</Typography>
                          </TableCell>
-                         <TableCell align='left'>
+                         <TableCell align='center'>
                            <Typography className={classes.text} variant='h6'>Id Transaction</Typography>
                          </TableCell>
                          <TableCell align='center'>
                            <Typography className={classes.text} variant='h6'>Product Name</Typography>
                          </TableCell>
-                         <TableCell align='left'>
+                         <TableCell align='center'>
                            <Typography className={classes.text} variant='h6'>Full Name</Typography>
                          </TableCell>
-                         <TableCell align='left'>
+                         <TableCell align='center'>
                            <Typography className={classes.text} variant='h6'>Total Price</Typography>
                          </TableCell>
-                          <TableCell align='left'>
+                          <TableCell align='center'>
                            <Typography className={classes.text} variant='h6'>Status</Typography>
                          </TableCell>
                          <TableCell align='center'>
@@ -108,7 +108,7 @@ export default function ProductPurchased() {
                                     <TableCell align="center">
                                         <Typography variant="h6">{row.idTransaction._id}</Typography>
                                     </TableCell>
-                                    <TableCell align="center">
+                                    <TableCell align="center" >
                                         <Typography variant="h6">{row.idProduct[0].productName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
