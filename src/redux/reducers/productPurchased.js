@@ -16,6 +16,8 @@ export default (state = productPurchased, actions) => {
             return actions.payload;
         case "DECLINE_PRODUCT_PURCHASEDT":
             return actions.payload;    
+        case "GET_ALL_LIST_SALDO_PRODUCT_TRANSACTION":
+            return actions.payload;
         default:
             return state;
     }
