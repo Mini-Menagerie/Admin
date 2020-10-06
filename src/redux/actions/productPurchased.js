@@ -2,7 +2,6 @@ import axios from '../../helpers/axios';
 
 export const getAllProductPurchased= () => async (dispatch) => {
     let result = await axios.get('/transactionDetails')
-    console.log(result);
     await dispatch({
         type: "GET_ALL_PRODUCT_PURCHASED",
         payload: result.data.result
@@ -108,6 +107,24 @@ export const declineProductPurchased = (status, id) => async (dispatch) => {
         }
     }
     catch(error){
+        console.log(error);
+    }
+}
+
+export const saldoProductTransaction = () => async (dispatch) => {
+    try {
+        let result = await axios.get(`/transaction`);
+        let sum = result.data.result.reduce(function (s, a) {
+            return s + a.totalPrice;
+        }, 0);
+        console.log(sum);
+
+        await dispatch({
+            type: "GET_ALL_LIST_SALDO_PRODUCT_TRANSACTION",
+            payload: sum
+        })
+    }
+    catch(error) {
         console.log(error);
     }
 }

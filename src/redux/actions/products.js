@@ -2,7 +2,6 @@ import axios from '../../helpers/axios';
 
 export const getAllProducts = () => async (dispatch) => {
     let result = await axios.get('/product')
-    console.log(result);
 
     await dispatch({
         type: "GET_ALL_PRODUCT",
