@@ -85,6 +85,14 @@ export default function Dashboard() {
   );
   const productPurchased = useSelector((state) => state.productPurchased);
 
+  let sumAdopt = saldoAdopt.reduce(function (s, a) {
+    return s + a.idPetUpForAdoption.fee;
+  }, 0);
+
+  let sumProduct = saldoProduct.reduce(function (s, a) {
+    return s + a.totalPrice;
+  }, 0);
+
   useEffect(() => {
     dispatch(getAllAdmin());
     dispatch(getAllCategoryPet());
@@ -117,7 +125,7 @@ export default function Dashboard() {
               <Typography variant="h4">
                 <CountUp
                   start={0}
-                  end={allAdmin.length}
+                  end={allAdmin.length !== 0 ? allAdmin.length : 0}
                   duration={4}
                   useEasing={true}
                   useGrouping={true}
@@ -141,7 +149,7 @@ export default function Dashboard() {
               <Typography variant="h4">
                 <CountUp
                   start={0}
-                  end={productPurchased.length}
+                  end={productPurchased.length !== 0 ? productPurchased.length : 0}
                   duration={4}
                   useEasing={true}
                   useGrouping={true}
@@ -165,7 +173,7 @@ export default function Dashboard() {
               <Typography variant="h4">
                 <CountUp
                   start={0}
-                  end={breed.length}
+                  end={breed.length !== 0 ? breed.length : 0}
                   duration={4}
                   useEasing={true}
                   useGrouping={true}
@@ -188,7 +196,7 @@ export default function Dashboard() {
               <Typography variant="h4">
                 <CountUp
                   start={0}
-                  end={listPetAdoptionTransaction.length}
+                  end={listPetAdoptionTransaction.length !== 0 ? listPetAdoptionTransaction.length : 0}
                   duration={4}
                   useEasing={true}
                   useGrouping={true}
@@ -211,7 +219,7 @@ export default function Dashboard() {
               <Typography variant="h4">
                 <CountUp
                   start={0}
-                  end={petCategory.length}
+                  end={petCategory.length !== 0 ? petCategory.length : 0}
                   duration={4}
                   useEasing={true}
                   useGrouping={true}
@@ -234,7 +242,7 @@ export default function Dashboard() {
               <Typography variant="h4">
                 <CountUp
                   start={0}
-                  end={product.length}
+                  end={product.length !== 0 ? product.length : 0}
                   duration={4}
                   useEasing={true}
                   useGrouping={true}
@@ -257,11 +265,12 @@ export default function Dashboard() {
               <Typography variant="h4">
                 <CountUp
                   start={0}
-                  end={saldoAdopt}
+                  end={sumAdopt}
                   duration={4}
                   useEasing={true}
                   useGrouping={true}
-                  separator=" "
+                  separator="."
+                  prefix="Rp."
                 />
               </Typography>
             </Grid>
@@ -280,11 +289,12 @@ export default function Dashboard() {
               <Typography variant="h4">
                 <CountUp
                   start={0}
-                  end={saldoProduct}
+                  end={sumProduct}
                   duration={4}
                   useEasing={true}
                   useGrouping={true}
-                  separator=" "
+                  separator="."
+                  prefix="Rp."
                 />
               </Typography>
             </Grid>
