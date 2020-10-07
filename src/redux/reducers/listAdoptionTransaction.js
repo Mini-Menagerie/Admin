@@ -16,6 +16,8 @@ export default (state = listAdoptionTransaction, actions) => {
       return actions.payload;
     case "DECLINE_ADOPT_TRANSACTION":
       return actions.payload;
+    case "GET_ALL_LIST_SALDO_ADOPT_TRANSACTION":
+      return actions.payload;
     default:
       return state;
   }

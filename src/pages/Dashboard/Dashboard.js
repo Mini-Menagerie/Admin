@@ -9,6 +9,8 @@ import {
   getAllBreed,
   getAllListAdoptionTransaction,
   getAllProductPurchased,
+  saldoAdoptionTransaction,
+  saldoProductTransaction
 } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import CountUp from "react-countup";
@@ -72,6 +74,8 @@ const useStyles = makeStyles((theme) => ({
 export default function Dashboard() {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const saldoAdopt = useSelector((state) => state.listAdoptionTransaction);
+  const saldoProduct = useSelector((state) => state.productPurchased);
   const allAdmin = useSelector((state) => state.admin);
   const petCategory = useSelector((state) => state.petCategory);
   const breed = useSelector((state) => state.breed);
@@ -88,6 +92,8 @@ export default function Dashboard() {
     dispatch(getAllBreed());
     dispatch(getAllListAdoptionTransaction());
     dispatch(getAllProductPurchased());
+    dispatch(saldoAdoptionTransaction());
+    dispatch(saldoProductTransaction());
   }, [dispatch]);
 
   return (
@@ -229,6 +235,52 @@ export default function Dashboard() {
                 <CountUp
                   start={0}
                   end={product.length}
+                  duration={4}
+                  useEasing={true}
+                  useGrouping={true}
+                  separator=" "
+                />
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid
+            elevation={3}
+            className={classes.paper}
+            item
+            xs={false}
+            sm={12}
+            md={5}
+            lg={3}
+          >
+            <Typography variant="h5">Total Saldo Adoptions</Typography>
+            <Grid className={classes.actspeaker}>
+              <Typography variant="h4">
+                <CountUp
+                  start={0}
+                  end={saldoAdopt}
+                  duration={4}
+                  useEasing={true}
+                  useGrouping={true}
+                  separator=" "
+                />
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid
+            elevation={3}
+            className={classes.paper}
+            item
+            xs={false}
+            sm={12}
+            md={5}
+            lg={3}
+          >
+            <Typography variant="h5">Total Saldo Products</Typography>
+            <Grid className={classes.actspeaker}>
+              <Typography variant="h4">
+                <CountUp
+                  start={0}
+                  end={saldoProduct}
                   duration={4}
                   useEasing={true}
                   useGrouping={true}

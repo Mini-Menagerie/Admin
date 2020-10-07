@@ -2,7 +2,7 @@ import axios from '../../helpers/axios';
 
 export const getAllListAdoptionTransaction = () => async (dispatch) => {
     let result = await axios.get('/listAdoptionTransaction')
-
+    
     await dispatch({
         type: "GET_ALL_LIST_ADOPT_TRANSACTION",
         payload: result.data.result
@@ -108,6 +108,24 @@ export const declineAdoptionTransaction = (status, id) => async (dispatch) => {
         }
     }
     catch(error){
+        console.log(error);
+    }
+}
+
+export const saldoAdoptionTransaction = () => async (dispatch) => {
+    try {
+        let result = await axios.get(`/listAdoptionTransaction`);
+        let sum = result.data.result.reduce(function (s, a) {
+            return s + a.idPetUpForAdoption.fee;
+        }, 0);
+        console.log(sum);
+
+        await dispatch({
+            type: "GET_ALL_LIST_SALDO_ADOPT_TRANSACTION",
+            payload: sum
+        })
+    }
+    catch(error) {
         console.log(error);
     }
 }
