@@ -17,6 +17,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import AddIcon from "@material-ui/icons/Add";
 import { CardMedia } from '@material-ui/core';
 import { Link } from "react-router-dom";
+import NumberFormat from 'react-number-format';
 import { getAllAdmin, getAllProducts, deleteProduct, updateProduct, getAllImage } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -57,7 +58,7 @@ export default function Product() {
     const classes = useStyles();
     const dispatch = useDispatch();
     const product = useSelector((state) => state.product);
-    console.log(product)
+    // console.log(product)
     // console.log(urlImage)
 
 
@@ -142,7 +143,7 @@ export default function Product() {
                                         <Typography variant="h6">{row.categories}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.price}</Typography>
+                                        <Typography variant="h6"><NumberFormat value={row.price} dswq displayType={'text'} thousandSeparator={true} prefix={'Rp.'} /></Typography>
                                     </TableCell>
                                     <TableCell align="center">
                                         <Typography variant="h6">{row.stock}</Typography>
