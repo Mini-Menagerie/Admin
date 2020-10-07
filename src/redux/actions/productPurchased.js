@@ -114,14 +114,10 @@ export const declineProductPurchased = (status, id) => async (dispatch) => {
 export const saldoProductTransaction = () => async (dispatch) => {
     try {
         let result = await axios.get(`/transaction`);
-        let sum = result.data.result.reduce(function (s, a) {
-            return s + a.totalPrice;
-        }, 0);
-        console.log(sum);
 
         await dispatch({
             type: "GET_ALL_LIST_SALDO_PRODUCT_TRANSACTION",
-            payload: sum
+            payload: result.data.result
         })
     }
     catch(error) {
