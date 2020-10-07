@@ -98,12 +98,12 @@ export default function Admin() {
                                     <Typography className={classes.text} variant="h6">No</Typography>
                                 </TableCell>
                                 <TableCell align="left">
-                                    <Typography className={classes.text} variant="h6">email</Typography>
+                                    <Typography className={classes.text} variant="h6">Email</Typography>
                                 </TableCell>
                                 <TableCell align="left">
                                     <Typography className={classes.text} variant="h6">Role</Typography>
                                 </TableCell>
-                                <TableCell align="right" >
+                                <TableCell align="center" >
                                     <Typography className={classes.tablehead} variant="h6">Action</Typography>
                                 </TableCell>
                             </TableRow>
@@ -127,7 +127,7 @@ export default function Admin() {
                                     </TableCell>
                                     }
                                     {index > 0 &&
-                                    <TableCell align="right">
+                                    <TableCell align="center">
                                         
                                         <Link
                                             to={`/dashboard/admins/edit/${row._id}`}

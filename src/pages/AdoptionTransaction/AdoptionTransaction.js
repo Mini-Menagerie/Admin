@@ -81,7 +81,7 @@ export default function AdoptionTransaction() {
                                 className={classes.link}
                             >
                                 <Button
-                                    disabled
+                                    // disabled
                                     variant="contained"
                                     color="secondary"
                                     className={classes.button}
@@ -99,28 +99,28 @@ export default function AdoptionTransaction() {
                         <TableHead className={classes.text} >
                             <TableRow  > 
                                 <TableCell >
-                                    <Typography className={classes.text} variant="h6">No</Typography>
+                                    <Typography  className={classes.text} variant="h6">No</Typography>
                                 </TableCell>
                                 <TableCell align="center">
-                                    <Typography className={classes.text} variant="h6">Pet Name</Typography>
+                                    <Typography style={{width: "100px"}} className={classes.text} variant="h6">Pet Name</Typography>
                                 </TableCell>
                                 <TableCell align="center">
-                                    <Typography className={classes.text} variant="h6">Pet Category</Typography>
+                                    <Typography  style={{width: "130px"}} className={classes.text} variant="h6">Pet Category</Typography>
                                 </TableCell>
-                                <TableCell align="right" >
-                                    <Typography className={classes.tablehead} variant="h6">Breed</Typography>
+                                <TableCell align="center" >
+                                    <Typography style={{width: "40px"}} className={classes.tablehead} variant="h6">Breed</Typography>
                                 </TableCell>
-                                <TableCell align="right" >
-                                    <Typography className={classes.tablehead} variant="h6">Owner Pet Name</Typography>
+                                <TableCell align="center" >
+                                    <Typography style={{width: "160px"}} className={classes.tablehead} variant="h6">Owner Pet Name</Typography>
                                 </TableCell>
-                                <TableCell align="right" >
-                                    <Typography className={classes.tablehead} variant="h6">Adopter Pet Name</Typography>
+                                <TableCell align="center" >
+                                    <Typography style={{width: "170px"}} className={classes.tablehead} variant="h6">Adopter Pet Name</Typography>
                                 </TableCell>
-                                <TableCell align="right" >
-                                    <Typography className={classes.tablehead} variant="h6">Status</Typography>
+                                <TableCell align="center" >
+                                    <Typography style={{width: "80px"}} className={classes.tablehead} variant="h6">Status</Typography>
                                 </TableCell>
-                                <TableCell align="right" >
-                                    <Typography className={classes.tablehead} variant="h6">Action</Typography>
+                                <TableCell align="center" >
+                                    <Typography style={{width: "80px"}} className={classes.tablehead} variant="h6">Action</Typography>
                                 </TableCell>
                             </TableRow>
                         </TableHead>

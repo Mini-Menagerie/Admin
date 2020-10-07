@@ -1,33 +1,15 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import {
-    Dashboard,
-    Admins,
-    Login,
-    CreateAdmin,
-    PetCategories,
-    CreatePetCategory,
-    EditPetCategory,
-    Product,
-    EditProduct,
-    AddProduct,
-    Breeds,
-    CreateBreed,
-    EditBreed,
-    Transaction,
-    ProductPurchased,
-    AdoptionTransaction,
-    EditItemProduct,
-    CreateAdoptionTransaction,
-    CatCollection,
-    Pets,
-    DogCollection,
-    AddPetCollection,
-    Collection,
-    CreateCollection,
-    EditCollection,
-} from "../pages";
+
+import { Dashboard, Admins, Login, 
+        CreateAdmin, PetCategories, 
+        CreatePetCategory, EditPetCategory, Product, EditProduct, AddProduct, Breeds,
+        CreateBreed, EditBreed,
+        Transaction, ProductPurchased, AdoptionTransaction, EditItemProduct, CreateAdoptionTransaction, 
+        CatCollection, Pets, DogCollection, AddPetCollection
+    } from "../pages";
+
 
 export default function Routes() {
     return (
@@ -56,6 +38,8 @@ export default function Routes() {
             <Route exact path="/dashboard/product/editItem/:id">
                 <EditItemProduct />
             </Route>
+            
+            
             {/* <Route exact path="/dashboard/admins/edit/:id">
                 <EditAdmin />
             </Route> */}
@@ -66,51 +50,44 @@ export default function Routes() {
                 <CreatePetCategory />
             </Route>
             <Route exact path="/dashboard/petCategory/edit/:id">
-                <EditPetCategory />
+                <EditPetCategory/>
             </Route>
             <Route exact path="/dashboard/breeds">
-                <Breeds />
+                <Breeds/>
             </Route>
             <Route exact path="/dashboard/breeds/edit/:id">
-                <EditBreed />
+                <EditBreed/>
             </Route>
             <Route exact path="/dashboard/petCollection/edit/:id">
-                <AddPetCollection />
+                <AddPetCollection/>
             </Route>
             /dashboard/petCollection/edit
             <Route exact path="/dashboard/breeds/create">
-                <CreateBreed />
+                <CreateBreed/>
             </Route>
+
             <Route exact path="/dashboard/transaction">
-                <Transaction />
+                <Transaction/>
             </Route>
             <Route exact path="/dashboard/transaction/productPurchased">
-                <ProductPurchased />
+                <ProductPurchased/>
             </Route>
             <Route exact path="/dashboard/petAdoptionTransaction/">
-                <AdoptionTransaction />
+                <AdoptionTransaction/>
             </Route>
-            <Route exact path="/dashboard/petAdoptionTransaction/add">
-                <CreateAdoptionTransaction />
+             <Route exact path="/dashboard/petAdoptionTransaction/add">
+                <CreateAdoptionTransaction/>
             </Route>
             <Route exact path="/dashboard/pets">
-                <Pets />
+                <Pets/>
             </Route>
             <Route exact path="/dashboard/pets/cat-collections">
-                <CatCollection />
+                <CatCollection/>
             </Route>
             <Route exact path="/dashboard/pets/dog-collections">
-                <DogCollection />
+                <DogCollection/>
             </Route>
-            <Route exact path="/dashboard/collection">
-                <Collection />
-            </Route>
-            <Route exact path="/dashboard/collection/create">
-                <CreateCollection />
-            </Route>
-            <Route exact path="/dashboard/collection/edit/:id">
-                <EditCollection />
-            </Route>
+
         </Switch>
     );
 }

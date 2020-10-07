@@ -10,12 +10,14 @@ import Header from "./Header";
 import MainApp from "./MainApp";
 import { useLocation } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
+import SideImage from "./assets/side2.jpg"
 import { Box } from "@material-ui/core";
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
         display: "flex",
-        backgroundColor: "#66de64",
+        backgroundColor: '#66de64',
     },
     toolbarIcon: {
         display: "flex",
@@ -28,12 +30,13 @@ const useStyles = makeStyles((theme) => ({
         whiteSpace: "nowrap",
         backgroundColor: "#FF7171",
         color: "#FFF",
-        width: "100%",
+        width: '100%',
         paddingLeft: theme.spacing(5),
         paddingRight: theme.spacing(5),
         height: "100vh",
     },
 }));
+
 
 export default function Dashboard() {
     const classes = useStyles();
@@ -52,19 +55,21 @@ export default function Dashboard() {
             <Drawer
                 variant="permanent"
                 classes={{
-                    paper: clsx(classes.drawerPaper),
+                    paper: clsx(
+                        classes.drawerPaper,
+                    ),
                 }}
             >
                 <Box className={classes.toolbarIcon}>
-                    <Typography
-                        component="h5"
-                        variant="h5"
-                        color="inherit"
-                        noWrap
-                        className={classes.title}
-                    >
-                        {capitalize(`${routeName}`)}
-                    </Typography>
+                <Typography
+                    component="h5"
+                    variant="h5"
+                    color="inherit"
+                    noWrap
+                    className={classes.title}
+                >
+                    {capitalize(`${routeName}`)}
+                </Typography>
                 </Box>
                 <Divider />
                 <List>

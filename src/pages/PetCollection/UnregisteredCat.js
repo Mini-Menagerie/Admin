@@ -14,6 +14,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
+import AddIcon from "@material-ui/icons/Add";
 import { Link } from "react-router-dom";
 import { getAllCats } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
@@ -50,8 +51,8 @@ const useStyles = makeStyles((theme) => ({
 export default function UnregisteredCat() {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const dogs = useSelector((state) => state.dogs);
-    console.log(dogs);
+    const cats = useSelector((state) => state.cats);
+    console.log(cats);
 
     useEffect(() => {
         dispatch(getAllCats());
@@ -117,8 +118,8 @@ export default function UnregisteredCat() {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {Array.isArray(dogs) &&
-                            dogs.sort().map((row, index) => (
+                            {Array.isArray(cats) &&
+                            cats.sort().map((row, index) => (
                                 
                                 <TableRow key={row._id}>
                                     <TableCell component="th" scope="row">

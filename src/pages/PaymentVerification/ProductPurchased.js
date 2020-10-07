@@ -1,17 +1,27 @@
 import React, { Fragment, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
+import Container from "@material-ui/core/Container";
 import { Box } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import { getAllProductPurchased } from "../../redux/actions";
+import DeleteIcon from "@material-ui/icons/Delete";
+import EditIcon from "@material-ui/icons/Edit";
+import AddIcon from "@material-ui/icons/Add";
+import { CardMedia } from '@material-ui/core';
+import { Link } from "react-router-dom";
+import { getAllAdmin, getAllProductPurchased, acceptProductPurchased, declineProductPurchased } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { SentimentDissatisfied } from "@material-ui/icons";
+import {useHistory} from 'react-router-dom';
+import { Send, SentimentDissatisfied } from "@material-ui/icons";
+import jwtDecode from "jwt-decode";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -49,7 +59,9 @@ const useStyles = makeStyles((theme) => ({
 export default function ProductPurchased() {
     const classes = useStyles();
     const dispatch = useDispatch();
+    const history = useHistory();
     const productPurchased = useSelector((state) => state.productPurchased);
+    console.log(productPurchased);
 
     useEffect(() => {
         dispatch(getAllProductPurchased());
@@ -64,19 +76,19 @@ export default function ProductPurchased() {
                          <TableCell>
                            <Typography className={classes.text} variant='h6'>No</Typography>
                          </TableCell>
-                         <TableCell align='left'>
+                         <TableCell align='center'>
                            <Typography className={classes.text} variant='h6'>Id Transaction</Typography>
                          </TableCell>
                          <TableCell align='center'>
                            <Typography className={classes.text} variant='h6'>Product Name</Typography>
                          </TableCell>
-                         <TableCell align='left'>
+                         <TableCell align='center'>
                            <Typography className={classes.text} variant='h6'>Full Name</Typography>
                          </TableCell>
-                         <TableCell align='left'>
+                         <TableCell align='center'>
                            <Typography className={classes.text} variant='h6'>Total Price</Typography>
                          </TableCell>
-                          <TableCell align='left'>
+                          <TableCell align='center'>
                            <Typography className={classes.text} variant='h6'>Status</Typography>
                          </TableCell>
                          <TableCell align='center'>
@@ -96,7 +108,7 @@ export default function ProductPurchased() {
                                     <TableCell align="center">
                                         <Typography variant="h6">{row.idTransaction._id}</Typography>
                                     </TableCell>
-                                    <TableCell align="center">
+                                    <TableCell align="center" >
                                         <Typography variant="h6">{row.idProduct[0].productName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
