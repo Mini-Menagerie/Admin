@@ -114,7 +114,7 @@ export const declineAdoptionTransaction = (status, id) => async (dispatch) => {
 
 export const saldoAdoptionTransaction = () => async (dispatch) => {
     try {
-        let result = await axios.get(`/listAdoptionTransaction`);
+        let result = await axios.get(`/petUpForAdoption`);
         
         await dispatch({
             type: "GET_ALL_LIST_SALDO_ADOPT_TRANSACTION",

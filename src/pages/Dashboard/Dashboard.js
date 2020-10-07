@@ -86,8 +86,10 @@ export default function Dashboard() {
   const productPurchased = useSelector((state) => state.productPurchased);
 
   let sumAdopt = saldoAdopt.reduce(function (s, a) {
-    return s + a.idPetUpForAdoption.fee;
+    return s + a.fee;
   }, 0);
+
+  console.log(sumAdopt);
 
   let sumProduct = saldoProduct.reduce(function (s, a) {
     return s + a.totalPrice;
