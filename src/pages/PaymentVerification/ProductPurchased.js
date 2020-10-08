@@ -26,7 +26,7 @@ import jwtDecode from "jwt-decode";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-      width: '80%',
+      width: '100%',
       margin: 'auto',
     //   boxShadow: '0 0.7rem 1rem rgba(111, 115, 184, 0.8) !important',
     //   backgroundColor: '#3a6986',
@@ -99,22 +99,22 @@ export default function ProductPurchased() {
                             productPurchased.map((row, index) => (                                
                                 <TableRow key={row._id}>
                                     <TableCell component="th" scope="row">
-                                        <Typography variant="h6">{index+1}</Typography>
+                                        <Typography variant="subtitle">{index+1}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.idTransaction._id}</Typography>
+                                        <Typography variant="subtitle">{row.idTransaction._id}</Typography>
                                     </TableCell>
                                     <TableCell align="center" >
-                                        <Typography variant="h6">{row.idProduct[0].productName}</Typography>
+                                        <Typography variant="subtitle">{row.idProduct[0].productName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.idTransaction.idUser.fullName}</Typography>
+                                        <Typography variant="subtitle">{row.idTransaction.idUser.fullName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6"><NumberFormat value={row.idTransaction.totalPrice} dswq displayType={'text'} thousandSeparator={true} prefix={'Rp.'} /></Typography>
+                                        <Typography variant="subtitle"><NumberFormat value={row.idTransaction.totalPrice} dswq displayType={'text'} thousandSeparator={true} prefix={'Rp.'} /></Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">Completed</Typography>
+                                        <Typography variant="subtitle">Completed</Typography>
                                     </TableCell>                          
                                 </TableRow>
                             ))}
