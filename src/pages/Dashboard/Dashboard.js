@@ -36,7 +36,8 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     color: "white",
     marginTop: theme.spacing(3),
-    padding: theme.spacing(3),
+    padding: '10px 20px',
+    fontSize: "16px",
   },
 
   ogevent: {
@@ -69,6 +70,9 @@ const useStyles = makeStyles((theme) => ({
     WebkitBorderRadius: "10px",
     borderRadius: "10px",
   },
+  textDashboard: {
+    fontSize: '24px',
+  }
 }));
 
 export default function Dashboard() {
@@ -124,7 +128,7 @@ export default function Dashboard() {
           >
             <Typography variant="h5">Total Admin</Typography>
             <Grid className={classes.actspeaker}>
-              <Typography variant="h4">
+              <Typography variant="h4" className={classes.textDashboard}>
                 <CountUp
                   start={0}
                   end={allAdmin.length !== 0 ? allAdmin.length : 0}
@@ -148,7 +152,7 @@ export default function Dashboard() {
           >
             <Typography variant="h5">Product Purchased</Typography>
             <Grid className={classes.actspeaker}>
-              <Typography variant="h4">
+              <Typography variant="h4" className={classes.textDashboard}>
                 <CountUp
                   start={0}
                   end={productPurchased.length !== 0 ? productPurchased.length : 0}
@@ -172,7 +176,7 @@ export default function Dashboard() {
           >
             <Typography variant="h5">Breed</Typography>
             <Grid className={classes.actspeaker}>
-              <Typography variant="h4">
+              <Typography variant="h4" className={classes.textDashboard}>
                 <CountUp
                   start={0}
                   end={breed.length !== 0 ? breed.length : 0}
@@ -195,7 +199,7 @@ export default function Dashboard() {
           >
             <Typography variant="h5">List Adoption Transactions</Typography>
             <Grid className={classes.actspeaker}>
-              <Typography variant="h4">
+              <Typography variant="h4" className={classes.textDashboard}>
                 <CountUp
                   start={0}
                   end={listPetAdoptionTransaction.length !== 0 ? listPetAdoptionTransaction.length : 0}
@@ -218,7 +222,7 @@ export default function Dashboard() {
           >
             <Typography variant="h5">Pet Category</Typography>
             <Grid className={classes.actspeaker}>
-              <Typography variant="h4">
+              <Typography variant="h4" className={classes.textDashboard}>
                 <CountUp
                   start={0}
                   end={petCategory.length !== 0 ? petCategory.length : 0}
@@ -241,7 +245,7 @@ export default function Dashboard() {
           >
             <Typography variant="h5">Products</Typography>
             <Grid className={classes.actspeaker}>
-              <Typography variant="h4">
+              <Typography variant="h4" className={classes.textDashboard}>
                 <CountUp
                   start={0}
                   end={product.length !== 0 ? product.length : 0}
@@ -260,11 +264,11 @@ export default function Dashboard() {
             xs={false}
             sm={12}
             md={5}
-            lg={3}
+            lg={4}
           >
             <Typography variant="h5">Total Saldo Adoptions</Typography>
             <Grid className={classes.actspeaker}>
-              <Typography variant="h6">
+              <Typography variant="h4" className={classes.textDashboard}>
                 <CountUp
                   start={0}
                   end={sumAdopt}
@@ -284,11 +288,11 @@ export default function Dashboard() {
             xs={false}
             sm={12}
             md={5}
-            lg={3}
+            lg={4}
           >
             <Typography variant="h5">Total Saldo Products</Typography>
             <Grid className={classes.actspeaker}>
-              <Typography variant="h6">
+              <Typography variant="h4" className={classes.textDashboard}>
                 <CountUp
                   start={0}
                   end={sumProduct}

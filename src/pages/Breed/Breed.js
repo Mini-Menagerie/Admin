@@ -21,7 +21,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: '80%',
+        width: '100%',
         margin: 'auto',
         boxShadow: '0 0.7rem 1rem rgba(111, 115, 184, 0.8) !important',
         backgroundColor: '#3a6986',

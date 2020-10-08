@@ -130,25 +130,25 @@ export default function AdoptionTransaction() {
                                 
                                 <TableRow key={row._id}>
                                     <TableCell component="th" scope="row">
-                                        <Typography variant="h6">{index+1}</Typography>
+                                        <Typography variant="subtitle">{index+1}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.petName}</Typography>
+                                        <Typography variant="subtitle">{row.petName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.petCategory}</Typography>
+                                        <Typography variant="subtitle">{row.petCategory}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.breed}</Typography>
+                                        <Typography variant="subtitle">{row.breed}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.ownerPetName}</Typography>
+                                        <Typography variant="subtitle">{row.ownerPetName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.adopterPetName}</Typography>
+                                        <Typography variant="subtitle">{row.adopterPetName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.status}</Typography>
+                                        <Typography variant="subtitle">{row.status}</Typography>
                                     </TableCell>
                                     <TableCell align="left">
                                     {index >= 0 &&
