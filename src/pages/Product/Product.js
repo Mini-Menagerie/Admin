@@ -23,7 +23,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: '90%',
+        width: '100%',
         margin: 'auto',
         boxShadow: '0 0.7rem 1rem rgba(111, 115, 184, 0.8) !important',
         backgroundColor: '#3a6986',
@@ -32,9 +32,9 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(3),
     },
     tablehead: {
-        marginRight: theme.spacing(5),
+        marginRight: theme.spacing(3),
         color: 'white',
-        marginLeft: theme.spacing(5),
+        marginLeft: theme.spacing(3),
     },
     button: {
         margin: theme.spacing(1),
@@ -80,7 +80,7 @@ export default function Product() {
                         alignItems="center"
                     >
                         <Grid>
-                            <Typography className={classes.tablehead} variant="h4">List Products</Typography>
+                            <Typography className={classes.tablehead} variant="h6">List Products</Typography>
                         </Grid>
                         <Grid>
                             
@@ -111,9 +111,9 @@ export default function Product() {
                                 <TableCell align="center">
                                     <Typography className={classes.text} variant="h6">Product Name</Typography>
                                 </TableCell>
-                                <TableCell align="center">
+                                {/* <TableCell align="center">
                                     <Typography className={classes.text} variant="h6">Categories</Typography>
-                                </TableCell>
+                                </TableCell> */}
                                 <TableCell align="right" >
                                     <Typography className={classes.tablehead} variant="h6">Price</Typography>
                                 </TableCell>
@@ -134,19 +134,19 @@ export default function Product() {
                                 
                                 <TableRow key={row._id}>
                                     <TableCell component="th" scope="row">
-                                        <Typography variant="h6">{index+1}</Typography>
+                                        <Typography variant="subtitle">{index+1}</Typography>
                                     </TableCell>
                                     <TableCell align="left">
-                                        <Typography variant="h6">{row.productName}</Typography>
+                                        <Typography variant="subtitle">{row.productName}</Typography>
+                                    </TableCell>
+                                    {/* <TableCell align="center">
+                                        <Typography variant="subtitle">{row.categories}</Typography>
+                                    </TableCell> */}
+                                    <TableCell align="center">
+                                        <Typography variant="subtitle"><NumberFormat value={row.price} dswq displayType={'text'} thousandSeparator={true} prefix={'Rp.'} /></Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.categories}</Typography>
-                                    </TableCell>
-                                    <TableCell align="center">
-                                        <Typography variant="h6"><NumberFormat value={row.price} dswq displayType={'text'} thousandSeparator={true} prefix={'Rp.'} /></Typography>
-                                    </TableCell>
-                                    <TableCell align="center">
-                                        <Typography variant="h6">{row.stock}</Typography>
+                                        <Typography variant="subtitle">{row.stock}</Typography>
                                     </TableCell>
                                     <TableCell align="left">
                                     <CardMedia
