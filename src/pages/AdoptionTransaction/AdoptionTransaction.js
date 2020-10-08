@@ -60,6 +60,9 @@ export default function AdoptionTransaction() {
         dispatch(getAllListAdoptionTransaction());
     }, [dispatch]);
 
+    console.log('====================================');
+    console.log(adoptionTransaction);
+    console.log('====================================');
     return (
         <Fragment >
             <Box component={Paper} className={classes.root}>
@@ -136,10 +139,10 @@ export default function AdoptionTransaction() {
                                     </TableCell>
                                     <TableCell align="center">
 
-                                        <Typography variant="subtitle">{row.petCategory}</Typography>
+                                        <Typography variant="subtitle">{row.idPetUpForAdoption.idPet.idCategoryPet.categoryName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="subtitle">{row.breed}</Typography>
+                                        <Typography variant="subtitle">{row.idPetUpForAdoption.idPet.idBreed.breedName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
                                         <Typography variant="subtitle">{row.ownerPetName}</Typography>
