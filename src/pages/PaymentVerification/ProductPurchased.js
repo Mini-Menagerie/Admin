@@ -20,15 +20,16 @@ import { Link } from "react-router-dom";
 import { getAllAdmin, getAllProductPurchased, acceptProductPurchased, declineProductPurchased } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import {useHistory} from 'react-router-dom';
+import NumberFormat from 'react-number-format';
 import { Send, SentimentDissatisfied } from "@material-ui/icons";
 import jwtDecode from "jwt-decode";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-      width: '100%',
+      width: '80%',
       margin: 'auto',
-      boxShadow: '0 0.7rem 1rem rgba(111, 115, 184, 0.8) !important',
-      backgroundColor: '#3a6986',
+    //   boxShadow: '0 0.7rem 1rem rgba(111, 115, 184, 0.8) !important',
+    //   backgroundColor: '#3a6986',
   },
   table: {
       padding: theme.spacing(3),
@@ -46,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: "none",
   },
   text: {
-      color: 'white',
+      color: "#fff",
       backgroundColor: '#5c84a6',
   },
   media: {
@@ -90,17 +91,12 @@ export default function ProductPurchased() {
                          </TableCell>
                           <TableCell align='center'>
                            <Typography className={classes.text} variant='h6'>Status</Typography>
-                         </TableCell>
-                         <TableCell align='center'>
-                           <Typography className={classes.text} variant='h6'>Action</Typography>
-                         </TableCell>
-                         
+                         </TableCell>                                                 
                       </TableRow>
                    </TableHead>
                    <TableBody>
                             {Array.isArray(productPurchased) &&
-                            productPurchased.map((row, index) => (
-                                
+                            productPurchased.map((row, index) => (                                
                                 <TableRow key={row._id}>
                                     <TableCell component="th" scope="row">
                                         <Typography variant="h6">{index+1}</Typography>
@@ -115,55 +111,14 @@ export default function ProductPurchased() {
                                         <Typography variant="h6">{row.idTransaction.idUser.fullName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.idTransaction.totalPrice}</Typography>
+                                        <Typography variant="h6"><NumberFormat value={row.idTransaction.totalPrice} dswq displayType={'text'} thousandSeparator={true} prefix={'Rp.'} /></Typography>
                                     </TableCell>
                                     <TableCell align="center">
                                         <Typography variant="h6">Completed</Typography>
-                                    </TableCell>
-                                    {/* <TableCell align="center">
-                                        <Typography variant="h6">{row.paymentSlip}</Typography>
-                                    </TableCell> */}
-                                   
-                                    <TableCell align="left">
-                                    {index >= 0 &&
-                                    <TableCell align="right">  
-
-
-                                        {/* <Button
-                                            variant="contained"
-                                            color="secondary"
-                                            className={classes.button}
-                                            startIcon={<Send />}
-                                            onClick={() =>
-                                                dispatch(acceptProductPurchased("Accepted", row._id))
-                                            }
-                                        >
-                                            Accept
-                                        </Button> */}
-
-                                        <Button
-                                            variant="contained"
-                                            color="secondary"
-                                            disabled
-                                            className={classes.button}
-                                            startIcon={<SentimentDissatisfied />}
-                                            onClick={() =>
-                                                null
-                                                // dispatch(declineProductPurchased("Decline", row._id))
-                                            }
-                                        >
-                                            Delete
-                                        </Button>
-                                    
-                                    </TableCell>
-                                    }
-                                     
-                                    </TableCell>
-                                    
+                                    </TableCell>                          
                                 </TableRow>
                             ))}
                         </TableBody>
-
                 </TableContainer>
             </Box>
         </Fragment>

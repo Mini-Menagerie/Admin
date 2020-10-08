@@ -141,8 +141,8 @@ export default function BigCat() {
                                         <Typography variant="h6">{row.gender}</Typography>
                                     </TableCell>
                                     {index >= 0 &&
-                                    <TableCell align="right">
-                                        <Link
+                                    <TableCell align="left">
+                                        {/* <Link
                                             to={`/dashboard/petCollection/edit/${row.id}`}
                                             className={classes.link}
                                         >
@@ -154,7 +154,7 @@ export default function BigCat() {
                                             >
                                                 Add to Collection
                                             </Button>
-                                    </Link>
+                                    </Link> */}
                                         
                                         <Button
                                             variant="contained"

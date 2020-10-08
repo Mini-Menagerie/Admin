@@ -84,10 +84,12 @@ export default function Dashboard() {
     (state) => state.listAdoptionTransaction
   );
   const productPurchased = useSelector((state) => state.productPurchased);
-
+      console.log(saldoAdopt);
   let sumAdopt = saldoAdopt.reduce(function (s, a) {
-    return s + a.idPetUpForAdoption.fee;
+    return s + a.fee;
   }, 0);
+
+  console.log(sumAdopt);
 
   let sumProduct = saldoProduct.reduce(function (s, a) {
     return s + a.totalPrice;
@@ -262,7 +264,7 @@ export default function Dashboard() {
           >
             <Typography variant="h5">Total Saldo Adoptions</Typography>
             <Grid className={classes.actspeaker}>
-              <Typography variant="h4">
+              <Typography variant="h6">
                 <CountUp
                   start={0}
                   end={sumAdopt}
@@ -286,7 +288,7 @@ export default function Dashboard() {
           >
             <Typography variant="h5">Total Saldo Products</Typography>
             <Grid className={classes.actspeaker}>
-              <Typography variant="h4">
+              <Typography variant="h6">
                 <CountUp
                   start={0}
                   end={sumProduct}

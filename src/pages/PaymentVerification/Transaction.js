@@ -89,8 +89,7 @@ export default function Transaction() {
           <LinkTab label="Product Purchased" href="/productPurchased" {...a11yProps(0)} />
         </Tabs>
       </AppBar>
-     
-      <TabPanel value={value} index={0}>
+        <TabPanel value={value} index={0}>
         <ProductPurchased />
       </TabPanel>
     </Box>
