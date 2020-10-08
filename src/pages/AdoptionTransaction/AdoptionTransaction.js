@@ -55,8 +55,7 @@ export default function AdoptionTransaction() {
     const classes = useStyles();
     const dispatch = useDispatch();
     const adoptionTransaction = useSelector((state) => state.listAdoptionTransaction);
-    console.log(adoptionTransaction);
-
+    
     useEffect(() => {
         dispatch(getAllListAdoptionTransaction());
     }, [dispatch]);
@@ -81,7 +80,7 @@ export default function AdoptionTransaction() {
                                 className={classes.link}
                             >
                                 <Button
-                                    // disabled
+                                    disabled
                                     variant="contained"
                                     color="secondary"
                                     className={classes.button}
@@ -136,6 +135,7 @@ export default function AdoptionTransaction() {
                                         <Typography variant="subtitle">{row.petName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
+
                                         <Typography variant="subtitle">{row.petCategory}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
