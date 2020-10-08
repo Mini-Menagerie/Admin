@@ -55,8 +55,7 @@ export default function AdoptionTransaction() {
     const classes = useStyles();
     const dispatch = useDispatch();
     const adoptionTransaction = useSelector((state) => state.listAdoptionTransaction);
-    console.log(adoptionTransaction);
-
+    
     useEffect(() => {
         dispatch(getAllListAdoptionTransaction());
     }, [dispatch]);
@@ -81,7 +80,7 @@ export default function AdoptionTransaction() {
                                 className={classes.link}
                             >
                                 <Button
-                                    // disabled
+                                    disabled
                                     variant="contained"
                                     color="secondary"
                                     className={classes.button}
@@ -136,13 +135,13 @@ export default function AdoptionTransaction() {
                                         <Typography variant="h6">{row.petName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.petCategory}</Typography>
+                                        <Typography variant="h6">{row.idPetUpForAdoption !== null && row.idPetUpForAdoption.idPet.idCategoryPet.categoryName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.breed}</Typography>
+                                        <Typography variant="h6">{row.idPetUpForAdoption !== null && row.idPetUpForAdoption.idPet.idBreed.breedName}</Typography>
                                     </TableCell>
-                                    <TableCell align="center">
-                                        <Typography variant="h6">{row.ownerPetName}</Typography>
+                                    <TableCell align="center"  >
+                                        <Typography variant="h6" >{row.ownerPetName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
                                         <Typography variant="h6">{row.adopterPetName}</Typography>
