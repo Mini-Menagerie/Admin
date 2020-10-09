@@ -84,14 +84,14 @@ export default function ListMenuItem() {
                         <ListItemText primary="Dashboard"/>
                 </ListItem>
             </Link>
-            <Link to="/dashboard/admins" className={classes.link}>
+            {/* <Link to="/dashboard/admins" className={classes.link}>
                 <ListItem button>
                     <ListItemIcon>
                         <DesktopMacRoundedIcon style={{ color: lightBlue[800] }} />
                     </ListItemIcon>
                         <ListItemText primary="Admin" />
                 </ListItem>
-            </Link>
+            </Link> */}
             <Link to="/dashboard/product" className={classes.link}>
                 <ListItem button>
                     <ListItemIcon>
