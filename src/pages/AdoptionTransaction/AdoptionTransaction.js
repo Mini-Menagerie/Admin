@@ -161,7 +161,7 @@ export default function AdoptionTransaction() {
                                         {index >= 0 &&
                                         <TableCell align="center">  
     
-    
+                                            {row.status === "Completed" ? <div>
                                             <Button
                                                 variant="contained"
                                                 color="secondary"
@@ -185,6 +185,34 @@ export default function AdoptionTransaction() {
                                             >
                                                 Decline
                                             </Button>
+                                            </div> : <div>
+                                            <Button
+                                                variant="contained"
+                                                disabled
+                                                color="secondary"
+                                                className={classes.button}
+                                                startIcon={<Send />}
+                                                onClick={() =>
+                                                    dispatch(acceptAdoptionTransaction("Accepted", row._id))
+                                                }
+                                            >
+                                                Accept
+                                            </Button>
+    
+                                            <Button
+                                                variant="contained"
+                                                color="secondary"
+                                                disabled
+                                                className={classes.button}
+                                                startIcon={<SentimentDissatisfied />}
+                                                onClick={() =>
+                                                    dispatch(declineAdoptionTransaction("Decline", row._id))
+                                                }
+                                            >
+                                                Decline
+                                            </Button>
+                                            </div> }
+                                            
                                         
                                         </TableCell>
                                         }
