@@ -40,7 +40,6 @@ export default function FormAddPetCollection() {
 
     // console.log(admins, 'ssss')
 
-    const id = pathname.split("/")[4];
   
 
     // useEffect(() => {

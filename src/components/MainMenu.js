@@ -10,7 +10,6 @@ import Header from "./Header";
 import MainApp from "./MainApp";
 import { useLocation } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
-import SideImage from "./assets/side2.jpg"
 import { Box } from "@material-ui/core";
 
 

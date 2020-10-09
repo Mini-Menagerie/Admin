@@ -12,7 +12,7 @@ import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 import { Link } from "react-router-dom";
 import { Grid, Box } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
-import { lightBlue, blue } from '@material-ui/core/colors';
+import { lightBlue } from '@material-ui/core/colors';
 
 import Divider from "@material-ui/core/Divider";
 

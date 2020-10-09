@@ -13,9 +13,6 @@ import { Box } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
-import EditIcon from "@material-ui/icons/Edit";
-import AddIcon from "@material-ui/icons/Add";
-import { Link } from "react-router-dom";
 import { getSmallDog } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 
