@@ -1,4 +1,5 @@
 import axios from '../../helpers/axios';
+import Swal from 'sweetalert2';
 
 export const getAllPetCollection = () => async (dispatch) => {
     let result = await axios.get('/petCollection')
@@ -14,7 +15,11 @@ export const addPetCollection = (values, history) => async (dispatch) => {
     let result = await axios.post('/petCollection/create', values)
     console.log(result);
     if(result.status === 200){
-        alert('success to add this Pet to Pet Collection')
+        Swal.fire({
+            icon: 'success',
+            title: 'God...',
+            text: 'Success to add Pet to Collections',
+          })
         await dispatch({
             type: "ADD_ONE_PET_COLLECTION",
             payload: result.data.message

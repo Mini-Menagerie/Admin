@@ -14,7 +14,7 @@ import { useDispatch } from "react-redux";
 import { addProduct } from "../../../redux/actions";
 import { useHistory } from "react-router-dom";
 import ReactFilestack from "filestack-react";
-const filestackapi = "AugqfuGzTQouENQs5OOe2z";
+const filestackapi = "AXQPEAHiQTeMTIKzisgugz";
 
 const useStyles = makeStyles((theme) => ({
   root: {

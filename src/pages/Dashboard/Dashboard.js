@@ -100,11 +100,11 @@ export default function Dashboard() {
   }, 0);
 
   useEffect(() => {
+    dispatch(getAllListAdoptionTransaction());
     dispatch(getAllAdmin());
     dispatch(getAllCategoryPet());
     dispatch(getAllProducts());
     dispatch(getAllBreed());
-    dispatch(getAllListAdoptionTransaction());
     dispatch(getAllProductPurchased());
     dispatch(saldoAdoptionTransaction());
     dispatch(saldoProductTransaction());

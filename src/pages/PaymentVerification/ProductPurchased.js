@@ -71,50 +71,50 @@ export default function ProductPurchased() {
     return (
         <Fragment >
             <Box component={Paper} className={classes.root}>
-                <TableContainer aria-label='a dense table' size='medium'>
+                <TableContainer aria-label='simple table' size='medium'>
                    <TableHead className={classes.text}>
                       <TableRow>
                          <TableCell>
-                           <Typography className={classes.text} variant='h6'>No</Typography>
+                           <Typography className={classes.text} variant='h5'>No</Typography>
                          </TableCell>
                          <TableCell align='center'>
-                           <Typography className={classes.text} variant='h6'>Id Transaction</Typography>
+                           <Typography className={classes.text} variant='h5'>Id Transaction</Typography>
                          </TableCell>
                          <TableCell align='center'>
-                           <Typography className={classes.text} variant='h6'>Product Name</Typography>
+                           <Typography className={classes.text} variant='h5'>Product Name</Typography>
                          </TableCell>
                          <TableCell align='center'>
-                           <Typography className={classes.text} variant='h6'>Full Name</Typography>
+                           <Typography className={classes.text} variant='h5'>Full Name</Typography>
                          </TableCell>
                          <TableCell align='center'>
-                           <Typography className={classes.text} variant='h6'>Total Price</Typography>
+                           <Typography className={classes.text} variant='h5'>Total Price</Typography>
                          </TableCell>
                           <TableCell align='center'>
-                           <Typography className={classes.text} variant='h6'>Status</Typography>
+                           <Typography className={classes.text} variant='h5'>Status</Typography>
                          </TableCell>                                                 
                       </TableRow>
                    </TableHead>
-                   <TableBody>
+                   <TableBody style={{width: '100%'}}>
                             {Array.isArray(productPurchased) &&
                             productPurchased.map((row, index) => (                                
                                 <TableRow key={row._id}>
                                     <TableCell component="th" scope="row">
-                                        <Typography variant="subtitle">{index+1}</Typography>
+                                        <Typography variant="h5">{index+1}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="subtitle">{row.idTransaction._id}</Typography>
+                                        <Typography variant="h6">{row.idTransaction._id}</Typography>
                                     </TableCell>
                                     <TableCell align="center" >
-                                        <Typography variant="subtitle">{row.idProduct[0].productName}</Typography>
+                                        <Typography variant="h6">{row.idProduct[0].productName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="subtitle">{row.idTransaction.idUser.fullName}</Typography>
+                                        <Typography variant="h6">{row.idTransaction.idUser.fullName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="subtitle"><NumberFormat value={row.idTransaction.totalPrice} dswq displayType={'text'} thousandSeparator={true} prefix={'Rp.'} /></Typography>
+                                        <Typography variant="h6"><NumberFormat value={row.idTransaction.totalPrice} dswq displayType={'text'} thousandSeparator={true} prefix={'Rp.'} /></Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="subtitle">Completed</Typography>
+                                        <Typography variant="h6">Completed</Typography>
                                     </TableCell>                          
                                 </TableRow>
                             ))}

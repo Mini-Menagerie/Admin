@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { useLocation, useHistory } from "react-router-dom";
 import { addImage } from "../../../redux/actions";
 import ReactFilestack from "filestack-react";
-const filestackapi = "AugqfuGzTQouENQs5OOe2z";
+const filestackapi = "AXQPEAHiQTeMTIKzisgugz";
 
 
 const useStyles = makeStyles((theme) => ({
