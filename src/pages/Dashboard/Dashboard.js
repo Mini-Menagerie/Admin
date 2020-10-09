@@ -96,6 +96,9 @@ export default function Dashboard() {
   console.log(sumAdopt);
 
   let sumProduct = saldoProduct.reduce(function (s, a) {
+    console.log('====================================');
+    console.log(s, a.totalPrice);
+    console.log('====================================');
     return s + a.totalPrice;
   }, 0);
 
