@@ -18,6 +18,7 @@ import AddIcon from "@material-ui/icons/Add";
 import { Link } from "react-router-dom";
 import { getAllAdmin, getAllCategoryPet } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
+import Swal from 'sweetalert2'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -134,7 +135,12 @@ export default function Admin() {
                                                 className={classes.button}
                                                 startIcon={<EditIcon />}
                                                 onClick={() =>
-                                                alert('Cannot Edit Default Pet Category')
+                                                Swal.fire({
+                                                    icon: 'error',
+                                                    title: 'Oops...',
+                                                    text: 'Something went wrong!',
+                                                    footer: '<a href>Why do I have this issue?</a>'
+                                                  })
 
                                                 }
                                             >
@@ -149,7 +155,12 @@ export default function Admin() {
                                             className={classes.button}
                                             startIcon={<DeleteIcon />}
                                             onClick={() =>
-                                                alert('Cannot Delete Default Pet Category')
+                                                Swal.fire({
+                                                    icon: 'error',
+                                                    title: 'Oops...',
+                                                    text: 'Something went wrong!',
+                                                    footer: '<a href>Why do I have this issue?</a>'
+                                                  })
                                                 // dispatch(deletePetCategory(row._id))
                                             }
                                         >

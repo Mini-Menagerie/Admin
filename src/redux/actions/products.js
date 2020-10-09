@@ -1,4 +1,5 @@
 import axios from '../../helpers/axios';
+import Swal from 'sweetalert2';
 
 export const getAllProducts = () => async (dispatch) => {
     let result = await axios.get('/product')
@@ -11,7 +12,13 @@ export const getAllProducts = () => async (dispatch) => {
 
 export const addProduct = (values, history) => async (dispatch) => {
     let result = await axios.post('/product/create', values)
-    console.log(result);
+    if(result.status === 200){
+        Swal.fire(
+            'Good job!',
+            'Product added!',
+            'success'
+          )
+    }
 
     await dispatch({
         type: "ADD_ONE_PRODUCT",
