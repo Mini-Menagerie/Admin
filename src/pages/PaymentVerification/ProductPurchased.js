@@ -102,16 +102,16 @@ export default function ProductPurchased() {
                                         <Typography variant="h5">{index+1}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.idTransaction._id}</Typography>
+                                        <Typography variant="h6">{row.idTransaction !== undefined && row.idTransaction._id}</Typography>
                                     </TableCell>
                                     <TableCell align="center" >
-                                        <Typography variant="h6">{row.idProduct[0].productName}</Typography>
+                                        <Typography variant="h6">{row.idProduct[0] !== undefined && row.idProduct[0].productName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.idTransaction.idUser.fullName}</Typography>
+                                        <Typography variant="h6">{row.idTransaction !== undefined && row.idTransaction.idUser.fullName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6"><NumberFormat value={row.idTransaction.totalPrice} dswq displayType={'text'} thousandSeparator={true} prefix={'Rp.'} /></Typography>
+                                        <Typography variant="h6"><NumberFormat value={row.idTransaction !== undefined && row.idTransaction.totalPrice} dswq displayType={'text'} thousandSeparator={true} prefix={'Rp.'} /></Typography>
                                     </TableCell>
                                     <TableCell align="center">
                                         <Typography variant="h6">Completed</Typography>
