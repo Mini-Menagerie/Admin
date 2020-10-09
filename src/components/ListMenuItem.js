@@ -6,7 +6,6 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Avatar from "@material-ui/core/Avatar";
 import Superadmin from "./assets/superadmin.jpg";
 import DashboardRoundedIcon from "@material-ui/icons/DashboardRounded";
-import DesktopMacRoundedIcon from "@material-ui/icons/DesktopMacRounded";
 import PetsRounded from "@material-ui/icons/PetsRounded";
 import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 import { Link } from "react-router-dom";
