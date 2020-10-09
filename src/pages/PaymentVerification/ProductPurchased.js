@@ -86,22 +86,22 @@ export default function ProductPurchased() {
                             productPurchased.map((row, index) => (                                
                                 <TableRow key={row._id}>
                                     <TableCell component="th" scope="row">
-                                        <Typography variant="h5">{index+1}</Typography>
+                                        <Typography variant="subtitle">{index+1}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.idTransaction !== undefined && row.idTransaction._id}</Typography>
+                                        <Typography variant="subtitle">{row.idTransaction !== undefined && row.idTransaction._id}</Typography>
                                     </TableCell>
                                     <TableCell align="center" >
-                                        <Typography variant="h6">{row.idProduct[0] !== undefined && row.idProduct[0].productName}</Typography>
+                                        <Typography variant="subtitle">{row.idProduct[0] !== undefined && row.idProduct[0].productName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">{row.idTransaction !== undefined && row.idTransaction.idUser.fullName}</Typography>
+                                        <Typography variant="subtitle">{row.idTransaction !== undefined && row.idTransaction.idUser.fullName}</Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6"><NumberFormat value={row.idTransaction !== undefined && row.idTransaction.totalPrice} dswq displayType={'text'} thousandSeparator={true} prefix={'Rp.'} /></Typography>
+                                        <Typography variant="subtitle"><NumberFormat value={row.idTransaction !== undefined && row.idTransaction.totalPrice} dswq displayType={'text'} thousandSeparator={true} prefix={'Rp.'} /></Typography>
                                     </TableCell>
                                     <TableCell align="center">
-                                        <Typography variant="h6">Completed</Typography>
+                                        <Typography variant="subtitle">Completed</Typography>
                                     </TableCell>                          
                                 </TableRow>
                             ))}
