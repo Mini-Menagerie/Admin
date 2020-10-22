@@ -2,7 +2,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2'
 
 export const login = (formData, history) => async () => {
-        await axios.post('http://localhost:8000/adminAccount/login', formData)
+        await axios.post('https://mini-menagerie-api.herokuapp.com/adminAccount/login', formData)
         .then(res=> {
             localStorage.setItem('menagerie', res.data.token)
             localStorage.setItem('admin', JSON.stringify(res.data.admin))
